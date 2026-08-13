@@ -990,11 +990,10 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 /* RESPONSIVE ADDITIONS FOR POLARIS LAYOUT */
 @media(max-width:1024px){
   .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .hero-content-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+  .hero-content-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
   .hero-card-left { align-items: center; }
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-btns, .hero-socials { justify-content: center; }
-  .photo-frame-polaris { max-width: 380px; height: 450px; }
   .about-row{grid-template-columns:1fr;gap:2rem}
   .about-info{border-left:none;padding-left:0;border-top:2px solid var(--border);padding-top:1.5rem}
   .hl-grid{grid-template-columns:1fr;grid-template-rows:auto}.hl-big{grid-row:auto}.hl-card{height:260px}
@@ -1016,10 +1015,35 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   .nav-links a { font-size: 1.2rem; }
   .hamburger { display: flex; z-index: 10000; }
   .nav-actions { display: none; }
-  .hero { padding: 7rem 1.2rem 3rem; }
-  .hero-name-title { font-size: 2.8rem; }
-  .photo-frame-polaris { height: 380px; }
-  .section { padding: 4.5rem 0; }
+  .hero { padding: 6.5rem 1.2rem 2.5rem; text-align: center; }
+  .hero-kinetic-title { justify-content: center; gap: 0.6rem; }
+  .kt-stroke, .kt-fill { font-size: clamp(2.8rem, 12vw, 4.2rem); }
+  
+  /* PERFECT MOBILE PORTRAIT CARD ARRANGEMENT */
+  .hero-half-portrait-right {
+    position: relative;
+    top: auto; right: auto; left: auto;
+    width: 100%;
+    max-width: 320px;
+    height: 370px;
+    margin: 1.2rem auto 1.8rem;
+    border-radius: 26px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.14);
+    border: 3px solid var(--border);
+    overflow: hidden;
+  }
+  .hero-portrait-img {
+    transform: none !important;
+    object-fit: cover;
+    object-position: center 10%;
+    opacity: 1 !important;
+  }
+  .hero-portrait-fade-left {
+    background: linear-gradient(to bottom, transparent 65%, rgba(0,0,0,0.3) 100%) !important;
+  }
+  
+  .hero-name-title { font-size: 2.5rem; }
+  .section { padding: 4rem 0; }
   .heading { font-size: 1.8rem; margin-bottom: 2rem; }
   .pj { grid-template-columns: 50px 1fr; gap: 1rem; }
   .pj-n { font-size: 1.8rem; }
