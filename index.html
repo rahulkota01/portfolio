@@ -21,6 +21,10 @@
       <span class="logo-sub">Pharm.D</span>
     </a>
     <nav class="nav-links" id="navLinks">
+      <div class="mobile-drawer-header">
+        <span class="drawer-title" data-en="Navigation" data-hi="नेविगेशन">Navigation</span>
+        <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+      </div>
       <a href="#hero" class="nav-pill active" data-en="Home" data-hi="मुख्य">Home</a>
       <a href="#about" class="nav-pill" data-en="About" data-hi="परिचय">About</a>
       <a href="#highlights" class="nav-pill" data-en="Highlights" data-hi="मुख्य बातें">Highlights</a>
@@ -28,17 +32,19 @@
       <a href="#insights" class="nav-pill" data-en="Insights" data-hi="विचार">Insights</a>
       <a href="#education" class="nav-pill" data-en="Education" data-hi="शिक्षा">Education</a>
       <a href="#skills" class="nav-pill" data-en="Skills" data-hi="कौशल">Skills</a>
-      <a href="#contact" class="nav-pill" data-en="Contact" data-hi="संपर्क">Contact</a>
-      <a href="./assets/Rahul_Kota_Resume.pdf" target="_blank" class="nav-resume-mobile-btn" data-en="Resume 📄" data-hi="रेज़्यूमे 📄">Resume 📄</a>
-      <!-- Mobile controls inside hamburger menu -->
-      <div class="mobile-nav-controls">
-        <button class="toggle-btn" id="langToggleMobile" title="Switch Language">
-          <span class="toggle-label" id="langLabelMobile">हि</span>
-        </button>
-        <button class="toggle-btn" id="themeToggleMobile" title="Toggle Dark Mode">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
-        </button>
+      <a href="#contact" class="nav-pill mobile-only-link" data-en="Contact" data-hi="संपर्क">Contact</a>
+      
+      <div class="mobile-drawer-footer">
+        <a href="./assets/Rahul_Kota_Resume.pdf" target="_blank" class="mobile-drawer-resume" data-en="Resume 📄" data-hi="रेज़्यूमे 📄">Resume 📄</a>
+        <div class="mobile-drawer-controls">
+          <button class="toggle-btn" id="langToggleMobile" title="Switch Language">
+            <span class="toggle-label" id="langLabelMobile">हि</span>
+          </button>
+          <button class="toggle-btn" id="themeToggleMobile" title="Toggle Dark Mode">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+        </div>
       </div>
     </nav>
     <div class="nav-actions">
@@ -54,8 +60,9 @@
         </button>
       </div>
     </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
 </header>
 
 <!-- HERO SECTION - POLARIS INSPIRED IMMERSIVE FULL-VIEWPORT DESIGN -->

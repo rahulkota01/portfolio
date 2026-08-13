@@ -61,13 +61,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
-  // ── MOBILE MENU ──
+  // ── MOBILE SIDEBAR DRAWER ──
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  const drawerClose = document.getElementById('drawerClose');
+  const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+  const openDrawer = () => {
+    if (navLinks) navLinks.classList.add('open');
+    if (mobileBackdrop) mobileBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeDrawer = () => {
+    if (navLinks) navLinks.classList.remove('open');
+    if (mobileBackdrop) mobileBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (hamburger) hamburger.addEventListener('click', openDrawer);
+  if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
+  if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeDrawer);
+
+  if (navLinks) {
     navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => navLinks.classList.remove('open'));
+      a.addEventListener('click', closeDrawer);
     });
   }
 
