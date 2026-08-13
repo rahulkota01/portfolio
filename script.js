@@ -284,8 +284,17 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>Biomedical research introduced me to molecular-level questions.</p>
           <p>Computational biology offers tools for investigating increasingly complex biological systems.</p>
           <p>I want to build across these areas rather than remain limited to a single discipline.</p>
-
-          <h3>Why I Am Moving Toward Biophysics and Computational Biology</h3>
+          <p><strong>The journey from a Pharm.D classroom to a research laboratory has not been a change of direction for me. It has been an expansion of it.</strong></p>
+        </div>
+      `
+    },
+    'article-4': {
+      category: 'FUTURE DIRECTION',
+      title: "Why I'm Moving Toward Biophysics and Computational Biology",
+      tag: 'Biophysics & Computational Biology',
+      imgSrc: './assets/article4_biophysics.jpg',
+      content: `
+        <div class="article-body-text">
           <p>As my exposure to biomedical research has grown, I have started to recognize that the questions I am most curious about increasingly lie at the boundary between <strong>biology, physics, chemistry, and computation</strong>.</p>
           <p>That is why I am planning to move toward <strong>biophysics and computational biology</strong>.</p>
           <p>This is not because I see pharmacy as a field I need to leave behind.</p>
@@ -332,12 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>I am learning programming. I am strengthening my scientific foundations. I am exploring computational methods. I am looking for more opportunities to experience research directly.</p>
           <p>That is part of what makes this stage exciting.</p>
           <p>There is still a tremendous amount to learn.</p>
-          <p>My goal after Pharm.D is not simply to stop at the degree.</p>
-          <p>I want to continue into advanced research, eventually working toward deeper questions in structural and computational biology and other interdisciplinary areas of biological science.</p>
+          <p>My goal after Pharm.D is not simply to stop at the degree. I want to continue into advanced research, eventually working toward deeper questions in structural and computational biology and other interdisciplinary areas of biological science.</p>
           <p>Looking back, my first research experience did not give me a completely defined career path.</p>
           <p>Instead, it gave me direction.</p>
-          <p>It taught me that I enjoy questions that sit between disciplines, that I enjoy learning beyond the boundaries of a syllabus, and that I want to build a career around understanding difficult biological problems.</p>
-          <p><strong>The journey from a Pharm.D classroom to a research laboratory has not been a change of direction for me. It has been an expansion of it.</strong></p>
+          <p><strong>I see my Pharm.D background as the starting point of this path — not a limitation on where it can lead.</strong></p>
         </div>
       `
     }
@@ -397,4 +404,25 @@ document.addEventListener('DOMContentLoaded', () => {
       closeArticle();
     }
   });
+
+  // ── MOBILE TOGGLE BUTTONS (sync with main toggles) ──
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
+  const langToggleMobile = document.getElementById('langToggleMobile');
+  const langLabelMobile = document.getElementById('langLabelMobile');
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', () => {
+      document.getElementById('themeToggle').click();
+    });
+  }
+  if (langToggleMobile) {
+    langToggleMobile.addEventListener('click', () => {
+      document.getElementById('langToggle').click();
+      // Sync label
+      if (langLabelMobile) {
+        setTimeout(() => {
+          langLabelMobile.textContent = document.getElementById('langLabel').textContent;
+        }, 50);
+      }
+    });
+  }
 });
