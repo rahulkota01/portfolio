@@ -37,19 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.lucide) lucide.createIcons();
   });
 
-  // ── NAVBAR SCROLL ──
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+  // ── FLOATING NAVBAR SCROLL & ACTIVE SECTION HIGHLIGHT ──
+  const navPills = document.querySelectorAll('.nav-pill');
+  const sections = document.querySelectorAll('section[id]');
+
+  const highlightNavOnScroll = () => {
+    let scrollY = window.scrollY;
+    sections.forEach(sec => {
+      const sectionHeight = sec.offsetHeight;
+      const sectionTop = sec.offsetTop - 150;
+      const sectionId = sec.getAttribute('id');
+      
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navPills.forEach(pill => {
+          pill.classList.remove('active');
+          if (pill.getAttribute('href') === `#${sectionId}`) {
+            pill.classList.add('active');
+          }
+        });
+      }
+    });
+  };
+
+  window.addEventListener('scroll', highlightNavOnScroll, { passive: true });
 
   // ── MOBILE MENU ──
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  }
 
   // ── ANIMATED COUNTERS ──
   let counterDone = false;
