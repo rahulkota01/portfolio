@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'RESEARCH EXPERIENCE',
       title: 'My First Experience in Cancer Research',
       tag: 'IIT (BHU) · Cancer Research',
-      imgSrc: './assets/article1_iitbhu_research.jpg',
+      imgSrc: './assets/article1_cancer_research.png',
       content: `
         <div class="article-body-text">
           <p>My first meaningful exposure to biomedical research came through my work around <strong>miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer (TNBC)</strong> at IIT (BHU).</p>
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'SCIENTIFIC PERSPECTIVE',
       title: "Why I'm Interested in Computational Biology",
       tag: 'Computational Biology & AI/ML',
-      imgSrc: './assets/article2_computational_biology.jpg',
+      imgSrc: './assets/article2_computational_biology.png',
       content: `
         <div class="article-body-text">
           <p>I am currently pursuing a Pharm.D, so at first glance, <strong>computational biology</strong> may seem like a direction quite different from my academic background.</p>
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'ACADEMIC JOURNEY',
       title: 'From a Pharm.D Classroom to a Research Laboratory',
       tag: 'Academic Journey · Biophysics Transition',
-      imgSrc: './assets/article3_academic_journey.jpg',
+      imgSrc: './assets/article3_classroom_to_lab.jpg',
       content: `
         <div class="article-body-text">
           <p>A classroom and a research laboratory can teach you about the same scientific subject in completely different ways.</p>
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'FUTURE DIRECTION',
       title: "Why I'm Moving Toward Biophysics and Computational Biology",
       tag: 'Biophysics & Computational Biology',
-      imgSrc: './assets/article4_biophysics.jpg',
+      imgSrc: './assets/article4_biophysics.png',
       content: `
         <div class="article-body-text">
           <p>As my exposure to biomedical research has grown, I have started to recognize that the questions I am most curious about increasingly lie at the boundary between <strong>biology, physics, chemistry, and computation</strong>.</p>
