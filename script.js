@@ -89,6 +89,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── CERTIFICATIONS ACADEMIC EXPANDER ──
+  const toggleCertsBtn = document.getElementById('toggleCertsBtn');
+  const moreCertsWrapper = document.getElementById('moreCertsWrapper');
+  const toggleCertsTxt = document.getElementById('toggleCertsTxt');
+  const certsChevron = document.getElementById('certsChevron');
+
+  if (toggleCertsBtn && moreCertsWrapper) {
+    toggleCertsBtn.addEventListener('click', () => {
+      const isCollapsed = moreCertsWrapper.classList.contains('collapsed');
+      const isHi = document.documentElement.getAttribute('lang') === 'hi';
+      
+      if (isCollapsed) {
+        moreCertsWrapper.classList.remove('collapsed');
+        moreCertsWrapper.classList.add('expanded');
+        if (toggleCertsTxt) {
+          toggleCertsTxt.textContent = isHi ? 'संक्षिप्त सूचकांक दिखाएं (कम करें)' : 'Collapse Academic Credentials Index';
+        }
+        if (certsChevron) certsChevron.style.transform = 'rotate(180deg)';
+      } else {
+        moreCertsWrapper.classList.remove('expanded');
+        moreCertsWrapper.classList.add('collapsed');
+        if (toggleCertsTxt) {
+          toggleCertsTxt.textContent = isHi ? 'पूर्ण शैक्षणिक रिकॉर्ड देखें (7 और)' : 'Explore Complete Academic Credentials (7 More)';
+        }
+        if (certsChevron) certsChevron.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
   // ── ANIMATED COUNTERS ──
   let counterDone = false;
   const counters = document.querySelectorAll('.stat-n');
