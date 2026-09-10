@@ -1305,3 +1305,203 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   height: 13px;
 }
 
+/* ── PROFESSIONAL MEMBERSHIPS SECTION STYLING ── */
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  margin-top: 2.2rem;
+}
+
+.membership-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: transform 0.35s var(--ease2), border-color 0.35s, box-shadow 0.35s;
+}
+
+.membership-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 20px rgba(201, 162, 39, 0.12);
+}
+
+.membership-badge-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.m-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.75rem;
+  border-radius: 100px;
+}
+
+.m-status-pill.gold {
+  background: rgba(201, 162, 39, 0.14);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}
+
+.m-status-pill.blue {
+  background: rgba(59, 130, 246, 0.14);
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.m-status-pill.teal {
+  background: rgba(20, 184, 166, 0.14);
+  color: #2dd4bf;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.m-status-pill.purple {
+  background: rgba(168, 85, 247, 0.14);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.m-status-pill svg {
+  width: 14px;
+  height: 14px;
+}
+
+.membership-logo-box {
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.membership-logo-img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.membership-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.membership-role {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.membership-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.membership-id-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  width: fit-content;
+  margin: 0.2rem 0;
+}
+
+.id-label {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.id-value {
+  font-size: 0.88rem;
+  color: #38bdf8;
+  font-weight: 700;
+  font-family: var(--f);
+}
+
+.membership-desc {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+}
+
+/* Light mode adjustments for membership cards */
+[data-theme="light"] #memberships {
+  background: #f8fafc !important;
+  color: var(--txt) !important;
+}
+
+[data-theme="light"] #memberships .heading.lt,
+[data-theme="light"] #memberships .label.lt,
+[data-theme="light"] #memberships .section-subtext.lt {
+  color: var(--txt) !important;
+}
+
+[data-theme="light"] .membership-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .membership-title {
+  color: var(--txt);
+}
+
+[data-theme="light"] .membership-desc {
+  color: var(--txt2);
+}
+
+[data-theme="light"] .membership-id-box {
+  background: rgba(29, 78, 216, 0.05);
+  border-color: rgba(29, 78, 216, 0.2);
+}
+
+[data-theme="light"] .id-value {
+  color: var(--blue);
+}
+
+/* Mobile Responsiveness for Memberships */
+@media (max-width: 768px) {
+  .membership-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .membership-card {
+    padding: 1.35rem;
+    gap: 0.9rem;
+  }
+  .membership-logo-box {
+    height: 70px;
+    padding: 0.6rem 1rem;
+  }
+  .membership-title {
+    font-size: 1.05rem;
+  }
+}
+
+
