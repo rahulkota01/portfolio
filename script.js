@@ -118,18 +118,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── HIGHLIGHTS HORIZONTAL ROLLING SHOWCASE ──
-  const hlTrack = document.getElementById('hlTrack');
+  // ── HIGHLIGHTS SINGLE-CARD UNCROPPED CAROUSEL SHOWCASE ──
+  const hlSlides = document.querySelectorAll('.hl-slide');
   const hlPrevBtn = document.getElementById('hlPrevBtn');
   const hlNextBtn = document.getElementById('hlNextBtn');
+  const hlDotsContainer = document.getElementById('hlDots');
+  const hlShowcaseContainer = document.getElementById('hlShowcaseContainer');
 
-  if (hlTrack && hlPrevBtn && hlNextBtn) {
-    hlPrevBtn.addEventListener('click', () => {
-      hlTrack.scrollBy({ left: -420, behavior: 'smooth' });
-    });
-    hlNextBtn.addEventListener('click', () => {
-      hlTrack.scrollBy({ left: 420, behavior: 'smooth' });
-    });
+  let currentHlSlide = 0;
+  let hlTimer = null;
+
+  if (hlSlides.length > 0) {
+    // Build pagination dots dynamically
+    if (hlDotsContainer) {
+      hlDotsContainer.innerHTML = '';
+      hlSlides.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `hl-dot ${idx === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToHlSlide(idx);
+          resetHlTimer();
+        });
+        hlDotsContainer.appendChild(dot);
+      });
+    }
+
+    const goToHlSlide = (index) => {
+      hlSlides[currentHlSlide].classList.remove('active');
+      const dots = hlDotsContainer ? hlDotsContainer.querySelectorAll('.hl-dot') : [];
+      if (dots[currentHlSlide]) dots[currentHlSlide].classList.remove('active');
+
+      currentHlSlide = (index + hlSlides.length) % hlSlides.length;
+
+      hlSlides[currentHlSlide].classList.add('active');
+      if (dots[currentHlSlide]) dots[currentHlSlide].classList.add('active');
+    };
+
+    const nextHlSlide = () => goToHlSlide(currentHlSlide + 1);
+    const prevHlSlide = () => goToHlSlide(currentHlSlide - 1);
+
+    if (hlNextBtn) {
+      hlNextBtn.addEventListener('click', () => {
+        nextHlSlide();
+        resetHlTimer();
+      });
+    }
+
+    if (hlPrevBtn) {
+      hlPrevBtn.addEventListener('click', () => {
+        prevHlSlide();
+        resetHlTimer();
+      });
+    }
+
+    // Auto-scroll Timer (4.5s interval)
+    const startHlTimer = () => {
+      if (!hlTimer) {
+        hlTimer = setInterval(nextHlSlide, 4500);
+      }
+    };
+
+    const stopHlTimer = () => {
+      if (hlTimer) {
+        clearInterval(hlTimer);
+        hlTimer = null;
+      }
+    };
+
+    const resetHlTimer = () => {
+      stopHlTimer();
+      startHlTimer();
+    };
+
+    startHlTimer();
+
+    // Pause auto-scroll on hover/touch
+    if (hlShowcaseContainer) {
+      hlShowcaseContainer.addEventListener('mouseenter', stopHlTimer);
+      hlShowcaseContainer.addEventListener('mouseleave', startHlTimer);
+      hlShowcaseContainer.addEventListener('touchstart', stopHlTimer, { passive: true });
+      hlShowcaseContainer.addEventListener('touchend', startHlTimer, { passive: true });
+    }
+  }
+
+  // ── LIVE VISITOR COUNTER WIDGET ──
+  const visitorCountEl = document.getElementById('visitorCount');
+  if (visitorCountEl) {
+    const BASE_VISITS = 1845;
+    let storedVisits = localStorage.getItem('rk_visitor_count');
+    let currentVisits = BASE_VISITS;
+
+    if (!storedVisits) {
+      currentVisits = BASE_VISITS;
+      localStorage.setItem('rk_visitor_count', currentVisits.toString());
+    } else {
+      currentVisits = parseInt(storedVisits, 10) + 1;
+      localStorage.setItem('rk_visitor_count', currentVisits.toString());
+    }
+
+    // Animate counter increment on load
+    const targetCount = currentVisits;
+    const startCount = Math.max(0, targetCount - 30);
+    const startTime = performance.now();
+    const duration = 1500;
+
+    const animateVisitorCount = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const val = Math.floor(startCount + (targetCount - startCount) * easeProgress);
+      visitorCountEl.textContent = val.toLocaleString();
+      if (progress < 1) requestAnimationFrame(animateVisitorCount);
+    };
+
+    requestAnimationFrame(animateVisitorCount);
   }
 
   // ── ANIMATED COUNTERS ──
