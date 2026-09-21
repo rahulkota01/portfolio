@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── HIGHLIGHTS SINGLE-CARD UNCROPPED CAROUSEL SHOWCASE ──
   const hlSlides = document.querySelectorAll('.hl-slide');
+  const hlSlidesTrack = document.getElementById('hlSlidesTrack');
   const hlPrevBtn = document.getElementById('hlPrevBtn');
   const hlNextBtn = document.getElementById('hlNextBtn');
   const hlDotsContainer = document.getElementById('hlDots');
@@ -128,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentHlSlide = 0;
   let hlTimer = null;
 
-  if (hlSlides.length > 0) {
+  if (hlSlides.length > 0 && hlSlidesTrack) {
     // Build pagination dots dynamically
     if (hlDotsContainer) {
       hlDotsContainer.innerHTML = '';
@@ -145,13 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const goToHlSlide = (index) => {
-      hlSlides[currentHlSlide].classList.remove('active');
       const dots = hlDotsContainer ? hlDotsContainer.querySelectorAll('.hl-dot') : [];
       if (dots[currentHlSlide]) dots[currentHlSlide].classList.remove('active');
 
       currentHlSlide = (index + hlSlides.length) % hlSlides.length;
 
-      hlSlides[currentHlSlide].classList.add('active');
+      hlSlidesTrack.style.transform = `translateX(-${currentHlSlide * 100}%)`;
       if (dots[currentHlSlide]) dots[currentHlSlide].classList.add('active');
     };
 
@@ -172,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Auto-scroll Timer (4.5s interval)
+    // Auto-play Timer (3.2s snappy interval)
     const startHlTimer = () => {
       if (!hlTimer) {
-        hlTimer = setInterval(nextHlSlide, 4500);
+        hlTimer = setInterval(nextHlSlide, 3200);
       }
     };
 
