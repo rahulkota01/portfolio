@@ -202,11 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── REAL-TIME GLOBAL VISITOR COUNTER API (SYNCED TOP & BOTTOM) ──
-  const visitorCountEl = document.getElementById('visitorCount');
-  const visitorCountTopEl = document.getElementById('visitorCountTop');
+  // ── REAL-TIME GLOBAL VISITOR COUNTER API (SYNCED ALL LOCATIONS) ──
+  const visitorTargets = document.querySelectorAll('#visitorCount, #visitorCountTop, #visitorCountNav, #visitorCountDrawer');
 
-  if (visitorCountEl || visitorCountTopEl) {
+  if (visitorTargets.length > 0) {
     const BASE_SEED = 1250; // Historical baseline visits prior to live API tracking
     
     // Fetch live global visit count from visitorbadge API
@@ -238,8 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const val = Math.floor(startCount + (targetCount - startCount) * ease);
         const formattedVal = val.toLocaleString();
 
-        if (visitorCountEl) visitorCountEl.textContent = formattedVal;
-        if (visitorCountTopEl) visitorCountTopEl.textContent = formattedVal;
+        visitorTargets.forEach(el => { if (el) el.textContent = formattedVal; });
 
         if (progress < 1) requestAnimationFrame(step);
       };

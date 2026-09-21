@@ -22,7 +22,13 @@
     </a>
     <nav class="nav-links" id="navLinks">
       <div class="mobile-drawer-header">
-        <span class="drawer-title" data-en="Navigation" data-hi="नेविगेशन">Navigation</span>
+        <div class="mobile-drawer-title-wrap" style="display:flex;align-items:center;gap:0.6rem;">
+          <span class="drawer-title" data-en="Navigation" data-hi="नेविगेशन">Navigation</span>
+          <div class="nav-visitor-pill" title="Live Website Visits">
+            <span class="vc-pulse-dot"></span>
+            <span class="nav-vc-num" id="visitorCountDrawer">--</span>
+          </div>
+        </div>
         <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
       </div>
       <a href="#hero" class="nav-pill active" data-en="Home" data-hi="मुख्य">Home</a>
@@ -49,6 +55,11 @@
       </div>
     </nav>
     <div class="nav-actions">
+      <div class="nav-visitor-pill" title="Live Website Visits">
+        <span class="vc-pulse-dot"></span>
+        <span class="nav-vc-label">VISITS:</span>
+        <span class="nav-vc-num" id="visitorCountNav">--</span>
+      </div>
       <a href="./assets/Rahul_Kota_CV.pdf" target="_blank" class="nav-resume-btn" data-en="CV 📄" data-hi="सीवी 📄">CV 📄</a>
       <a href="#contact" class="nav-cta-btn" data-en="Contact" data-hi="संपर्क">Contact</a>
       <div class="nav-controls">
