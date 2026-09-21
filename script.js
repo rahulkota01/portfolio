@@ -172,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Auto-play Timer (3.2s snappy interval)
+    // Auto-play Timer (3.12s snappy interval - reduced by 80ms)
     const startHlTimer = () => {
       if (!hlTimer) {
-        hlTimer = setInterval(nextHlSlide, 3200);
+        hlTimer = setInterval(nextHlSlide, 3120);
       }
     };
 
@@ -202,9 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── REAL-TIME GLOBAL VISITOR COUNTER API ──
+  // ── REAL-TIME GLOBAL VISITOR COUNTER API (SYNCED TOP & BOTTOM) ──
   const visitorCountEl = document.getElementById('visitorCount');
-  if (visitorCountEl) {
+  const visitorCountTopEl = document.getElementById('visitorCountTop');
+
+  if (visitorCountEl || visitorCountTopEl) {
     const BASE_SEED = 1250; // Historical baseline visits prior to live API tracking
     
     // Fetch live global visit count from visitorbadge API
@@ -227,14 +229,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateVisitorCount(targetCount) {
       const startCount = Math.max(0, targetCount - 25);
       const startTime = performance.now();
-      const duration = 1400;
+      const duration = 1100;
 
       const step = (now) => {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
         const val = Math.floor(startCount + (targetCount - startCount) * ease);
-        visitorCountEl.textContent = val.toLocaleString();
+        const formattedVal = val.toLocaleString();
+
+        if (visitorCountEl) visitorCountEl.textContent = formattedVal;
+        if (visitorCountTopEl) visitorCountTopEl.textContent = formattedVal;
+
         if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
