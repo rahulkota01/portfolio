@@ -202,11 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── REAL-TIME VISITOR TRACKER (TOTAL & TODAY'S VISITS) ──
+  // ── REAL-TIME VISITOR TRACKER (TOTAL, TOP, & TODAY'S VISITS) ──
   const visitorTotalEl = document.getElementById('visitorCount');
   const visitorTodayEl = document.getElementById('visitorCountToday');
+  const visitorNavEl = document.getElementById('visitorCountNav');
 
-  if (visitorTotalEl || visitorTodayEl) {
+  if (visitorTotalEl || visitorTodayEl || visitorNavEl) {
     const BASE_SEED = 1250; // Historical baseline visits
     const TODAY_BASE = 48;  // Baseline starting visits for today
     
@@ -256,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const valToday = Math.floor(startToday + (targetToday - startToday) * ease);
 
         if (visitorTotalEl) visitorTotalEl.textContent = valTotal.toLocaleString();
+        if (visitorNavEl) visitorNavEl.textContent = valTotal.toLocaleString();
         if (visitorTodayEl) visitorTodayEl.textContent = valToday.toLocaleString();
 
         if (progress < 1) requestAnimationFrame(step);

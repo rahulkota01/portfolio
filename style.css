@@ -43,9 +43,19 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2.5rem);
-  max-width: 1240px;
+  max-width: 1520px;
   z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  pointer-events: none;
   transition: all 0.4s var(--ease2);
+}
+
+.top-live-visitor-bar,
+.nav-island {
+  pointer-events: auto;
 }
 
 .nav-island {
@@ -89,6 +99,107 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   letter-spacing: 0.04em;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+/* FLOATING LIVE VISITOR BAR (OUTSIDE NAVBAR ISLAND - NO OVERLAP) */
+.top-live-visitor-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 0.48rem 1rem;
+  border-radius: 100px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--txt);
+  flex-shrink: 0;
+  transition: all 0.3s var(--ease2);
+}
+
+[data-theme="dark"] .top-live-visitor-bar {
+  background: rgba(12, 20, 37, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.top-live-visitor-bar:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
+}
+
+/* LIVE 3D ROTATING EARTH GLOBE SPHERE (PULSING & ROTATING) */
+.globe-3d-wrapper {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.globe-3d-sphere {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background: #0284c7; /* Deep ocean base */
+  box-shadow: 
+    inset -4px -4px 7px rgba(0, 0, 0, 0.85),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(56, 189, 248, 0.6);
+}
+
+/* Continents Map Layer animating endlessly */
+.globe-3d-continents {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60" viewBox="0 0 120 60"><path fill="%2322c55e" opacity="0.9" d="M12,12 Q20,8 28,15 Q35,22 22,30 Q12,28 12,12 Z M50,10 Q62,5 72,15 Q82,25 68,35 Q55,32 50,10 Z M82,28 Q92,22 100,32 Q108,40 92,48 Q82,40 82,28 Z M12,38 Q22,35 28,45 Q18,52 10,48 Z M95,8 Q105,6 112,14 Q102,18 95,8 Z"/></svg>');
+  background-size: 40px 20px;
+  background-repeat: repeat-x;
+  animation: rotate3DEarth 6.5s linear infinite;
+  opacity: 0.95;
+}
+
+/* Atmospheric Glow & 3D Shading Overlay */
+.globe-3d-atmosphere {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.4) 0%, transparent 50%, rgba(3, 7, 18, 0.8) 90%);
+  pointer-events: none;
+}
+
+@keyframes rotate3DEarth {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+
+.top-v-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--txt2);
+  letter-spacing: 0.04em;
+}
+
+.top-v-num {
+  font-family: var(--f);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #38bdf8;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+[data-theme="light"] .top-v-num {
+  color: var(--blue);
 }
 
 
@@ -1361,8 +1472,34 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   .stats-wrap{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-  .nav-floating { width: calc(100% - 1.5rem); top: 0.8rem; }
-  .nav-island { padding: 0.55rem 0.9rem; }
+  .nav-floating {
+    width: calc(100% - 1.5rem);
+    top: 0.82rem;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    gap: 0.5rem;
+    max-width: 100%;
+  }
+  .top-live-visitor-bar {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.72rem;
+    flex-shrink: 0;
+  }
+  .top-v-label {
+    font-size: 0.68rem;
+  }
+  .top-v-num {
+    font-size: 0.78rem;
+  }
+  .nav-island {
+    width: auto;
+    padding: 0.45rem 0.8rem;
+    gap: 0.5rem;
+    margin: 0;
+  }
+  .logo-name { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.65rem; padding: 0.1rem 0.45rem; }
   .nav-actions { display: none !important; }
   .hamburger { display: flex !important; z-index: 10001; }
 
