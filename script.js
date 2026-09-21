@@ -202,37 +202,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── LIVE VISITOR COUNTER WIDGET ──
+  // ── REAL-TIME GLOBAL VISITOR COUNTER API ──
   const visitorCountEl = document.getElementById('visitorCount');
   if (visitorCountEl) {
-    const BASE_VISITS = 1845;
-    let storedVisits = localStorage.getItem('rk_visitor_count');
-    let currentVisits = BASE_VISITS;
+    const BASE_SEED = 1250; // Historical baseline visits prior to live API tracking
+    
+    // Fetch live global visit count from visitorbadge API
+    fetch('https://api.visitorbadge.io/api/visitors?path=rahulkota01.github.io%2Fportfolio')
+      .then(res => res.text())
+      .then(svgText => {
+        const match = svgText.match(/VISITORS:\s*([\d,]+)/i) || svgText.match(/font-weight="bold">\s*([\d,]+)/i);
+        if (match && match[1]) {
+          const apiVisits = parseInt(match[1].replace(/,/g, ''), 10) || 0;
+          const totalVisits = BASE_SEED + apiVisits;
+          animateVisitorCount(totalVisits);
+        } else {
+          fallbackLocalCounter();
+        }
+      })
+      .catch(() => {
+        fallbackLocalCounter();
+      });
 
-    if (!storedVisits) {
-      currentVisits = BASE_VISITS;
-      localStorage.setItem('rk_visitor_count', currentVisits.toString());
-    } else {
-      currentVisits = parseInt(storedVisits, 10) + 1;
-      localStorage.setItem('rk_visitor_count', currentVisits.toString());
+    function animateVisitorCount(targetCount) {
+      const startCount = Math.max(0, targetCount - 25);
+      const startTime = performance.now();
+      const duration = 1400;
+
+      const step = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val = Math.floor(startCount + (targetCount - startCount) * ease);
+        visitorCountEl.textContent = val.toLocaleString();
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     }
 
-    // Animate counter increment on load
-    const targetCount = currentVisits;
-    const startCount = Math.max(0, targetCount - 30);
-    const startTime = performance.now();
-    const duration = 1500;
-
-    const animateVisitorCount = (now) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeProgress = 1 - Math.pow(1 - progress, 3);
-      const val = Math.floor(startCount + (targetCount - startCount) * easeProgress);
-      visitorCountEl.textContent = val.toLocaleString();
-      if (progress < 1) requestAnimationFrame(animateVisitorCount);
-    };
-
-    requestAnimationFrame(animateVisitorCount);
+    function fallbackLocalCounter() {
+      let stored = localStorage.getItem('rk_visitor_count') || '1845';
+      let count = parseInt(stored, 10) + 1;
+      localStorage.setItem('rk_visitor_count', count.toString());
+      animateVisitorCount(count);
+    }
   }
 
   // ── ANIMATED COUNTERS ──
