@@ -118,6 +118,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── HIGHLIGHTS HORIZONTAL ROLLING SHOWCASE ──
+  const hlTrack = document.getElementById('hlTrack');
+  const hlPrevBtn = document.getElementById('hlPrevBtn');
+  const hlNextBtn = document.getElementById('hlNextBtn');
+
+  if (hlTrack && hlPrevBtn && hlNextBtn) {
+    hlPrevBtn.addEventListener('click', () => {
+      hlTrack.scrollBy({ left: -420, behavior: 'smooth' });
+    });
+    hlNextBtn.addEventListener('click', () => {
+      hlTrack.scrollBy({ left: 420, behavior: 'smooth' });
+    });
+  }
+
   // ── ANIMATED COUNTERS ──
   let counterDone = false;
   const counters = document.querySelectorAll('.stat-n');

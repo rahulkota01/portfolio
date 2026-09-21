@@ -151,35 +151,73 @@
   </div>
 </section>
 
-<!-- HIGHLIGHTS -->
+<!-- HIGHLIGHTS HORIZONTAL ROLLING SHOWCASE -->
 <section id="highlights" class="section dark-bg">
   <div class="contain-lg">
-    <span class="label lt" data-en="Recent Highlights" data-hi="हालिया उपलब्धियाँ">Recent Highlights</span>
-    <h2 class="heading lt" data-en="Where I've Been" data-hi="मैं कहाँ गया">Where I've Been</h2>
-    <div class="hl-grid">
-      <div class="hl-card hl-big">
-        <img src="./assets/iisc_bangalore.jpg" alt="IISc Bangalore"/>
-        <div class="hl-over">
-          <span class="hl-tag">IISc Bangalore · 2025</span>
-          <h3 data-en="5th Health Care Summit" data-hi="5वां हेल्थ केयर शिखर सम्मेलन">5th Health Care Summit</h3>
-          <p data-en="Attended the national healthcare summit conference hosted at the Indian Institute of Science, Bangalore." data-hi="भारतीय विज्ञान संस्थान, बंगलौर में आयोजित राष्ट्रीय स्वास्थ्य देखभाल शिखर सम्मेलन में भाग लिया।">Attended the national healthcare summit conference hosted at the Indian Institute of Science, Bangalore.</p>
-        </div>
+    <div class="hl-header-flex">
+      <div>
+        <span class="label lt" data-en="Recent Highlights" data-hi="हालिया उपलब्धियाँ">Recent Highlights</span>
+        <h2 class="heading lt" data-en="Where I've Been & Research Journey" data-hi="मेरी अनुसंधान यात्रा और अनुभव">Where I've Been & Research Journey</h2>
       </div>
-      <div class="hl-card">
-        <img src="./assets/poster_presentation.jpg" alt="Poster Presentation"/>
-        <div class="hl-over">
-          <span class="hl-tag gold">🏆 First Place · 2025</span>
-          <h3 data-en="Award-Winning Poster" data-hi="पुरस्कार विजेता पोस्टर">Award-Winning Poster</h3>
-          <p data-en="&quot;Pharmacists: Frontline Drivers of India's Vaccination Movement&quot;" data-hi="&quot;फार्मासिस्ट: भारत के टीकाकरण अभियान के अग्रिम पंक्ति के चालक&quot;">"Pharmacists: Frontline Drivers of India's Vaccination Movement"</p>
-        </div>
+      <div class="hl-carousel-controls">
+        <button id="hlPrevBtn" class="hl-nav-btn" aria-label="Previous Slide"><i data-lucide="chevron-left"></i></button>
+        <button id="hlNextBtn" class="hl-nav-btn" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
       </div>
-      <div class="hl-card">
-        <img src="./assets/iit_indore.jpg" alt="IIT Indore"/>
-        <div class="hl-over">
-          <span class="hl-tag">IIT Indore · GIAN</span>
-          <h3 data-en="Precision Medicines Workshop" data-hi="प्रेसिजन मेडिसिन कार्यशाला">Precision Medicines Workshop</h3>
-          <p data-en="10-day course with Purdue University on next-gen deep medicines." data-hi="पर्ड्यू विश्वविद्यालय के साथ 10 दिवसीय पाठ्यक्रम।">10-day course with Purdue University on next-gen deep medicines.</p>
-        </div>
+    </div>
+    
+    <div class="hl-carousel-wrapper">
+      <div class="hl-carousel-track" id="hlTrack">
+        
+        <!-- CARD 01: NIT WARANGAL - PROF SRILAKSHMI -->
+        <article class="hl-card">
+          <img src="./assets/nitw_prof_srilakshmi.png" alt="With Prof. P.V. Srilakshmi at NIT Warangal"/>
+          <div class="hl-over">
+            <span class="hl-tag gold"><i data-lucide="microscope"></i> NIT Warangal · Mentorship</span>
+            <h3 data-en="Organic Chemistry Research Mentorship" data-hi="कार्बनिक रसायन विज्ञान अनुसंधान मार्गदर्शन">Organic Chemistry Research Mentorship</h3>
+            <p data-en="With Prof. P.V. Srilakshmi, Professor, Dept. of Chemistry, NIT Warangal. Guided during the 4-week internship on Synthesis of Dipeptides alongside PhD scholars." data-hi="प्रो. पी.वी. श्रीलक्ष्मी (रसायन विज्ञान विभाग, एनआईटी वारंगल) के साथ। डिपेप्टाइड्स के संश्लेषण पर 4-सप्ताह की इंटर्नशिप का मार्गदर्शन।">With Prof. P.V. Srilakshmi, Professor, Dept. of Chemistry, NIT Warangal. Guided during the 4-week internship on Synthesis of Dipeptides alongside PhD scholars.</p>
+          </div>
+        </article>
+
+        <!-- CARD 02: NIT WARANGAL - CAMPUS ENTRANCE -->
+        <article class="hl-card">
+          <img src="./assets/nitw_campus_internship.png" alt="NIT Warangal Campus Entrance"/>
+          <div class="hl-over">
+            <span class="hl-tag"><i data-lucide="building-2"></i> NIT Warangal · Internship 2026</span>
+            <h3 data-en="NIT Warangal Research Internship" data-hi="एनआईटी वारंगल अनुसंधान इंटर्नशिप">NIT Warangal Research Internship</h3>
+            <p data-en="At the National Institute of Technology Warangal main campus during the research internship (August–September 2026), gaining hands-on peptide synthesis techniques." data-hi="अनुसंधान इंटर्नशिप (अगस्त-सितंबर 2026) के दौरान नेशनल इंस्टीट्यूट ऑफ टेक्नोलॉजी वारंगल के मुख्य परिसर में।">At the National Institute of Technology Warangal main campus during the research internship (August–September 2026), gaining hands-on peptide synthesis techniques.</p>
+          </div>
+        </article>
+
+        <!-- CARD 03: IISC BANGALORE -->
+        <article class="hl-card">
+          <img src="./assets/iisc_bangalore.jpg" alt="IISc Bangalore Summit"/>
+          <div class="hl-over">
+            <span class="hl-tag"><i data-lucide="award"></i> IISc Bangalore · 2025</span>
+            <h3 data-en="5th Health Care Summit" data-hi="5वां हेल्थ केयर शिखर सम्मेलन">5th Health Care Summit</h3>
+            <p data-en="Attended the national healthcare summit conference hosted at the prestigious Indian Institute of Science (IISc), Bangalore." data-hi="भारतीय विज्ञान संस्थान, बंगलौर में आयोजित राष्ट्रीय स्वास्थ्य देखभाल शिखर सम्मेलन में भाग लिया।">Attended the national healthcare summit conference hosted at the prestigious Indian Institute of Science (IISc), Bangalore.</p>
+          </div>
+        </article>
+
+        <!-- CARD 04: POSTER PRESENTATION AWARD -->
+        <article class="hl-card">
+          <img src="./assets/poster_presentation.jpg" alt="Poster Award Presentation"/>
+          <div class="hl-over">
+            <span class="hl-tag gold"><i data-lucide="trophy"></i> 1st Place Award · 2025</span>
+            <h3 data-en="Award-Winning Poster Presentation" data-hi="पुरस्कार विजेता पोस्टर प्रस्तुति">Award-Winning Poster Presentation</h3>
+            <p data-en="&quot;Pharmacists: Frontline Drivers of India's Vaccination Movement&quot; — Won First Place at National Pharmacy Week 2025." data-hi="&quot;फार्मासिस्ट: भारत के टीकाकरण अभियान के अग्रिम पंक्ति के चालक&quot; — राष्ट्रीय फार्मेसी सप्ताह 2025 में प्रथम पुरस्कार जीता।">"Pharmacists: Frontline Drivers of India's Vaccination Movement" — Won First Place at National Pharmacy Week 2025.</p>
+          </div>
+        </article>
+
+        <!-- CARD 05: IIT INDORE -->
+        <article class="hl-card">
+          <img src="./assets/iit_indore.jpg" alt="IIT Indore Workshop"/>
+          <div class="hl-over">
+            <span class="hl-tag"><i data-lucide="sparkles"></i> IIT Indore · GIAN</span>
+            <h3 data-en="Precision Medicines Workshop" data-hi="प्रेसिजन मेडिसिन कार्यशाला">Precision Medicines Workshop</h3>
+            <p data-en="10-day intensive GIAN workshop in collaboration with Purdue University, USA on Next-Gen Deep Medicines at IIT Indore." data-hi="IIT इंदौर में नेक्स्ट-जेन डीप मेडिसिन पर पर्ड्यू यूनिवर्सिटी, यूएसए के सहयोग से 10-दिवसीय गहन जीआईएएन कार्यशाला।">10-day intensive GIAN workshop in collaboration with Purdue University, USA on Next-Gen Deep Medicines at IIT Indore.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </div>
@@ -463,7 +501,7 @@
         <span class="tl-date" data-en="Research Internship" data-hi="अनुसंधान इंटर्नशिप">Research Internship</span>
         <h3 data-en="Department of Chemistry · NIT Warangal (NITW)" data-hi="रसायन विज्ञान विभाग · NIT वारंगल (NITW)">Department of Chemistry · NIT Warangal (NITW)</h3>
         <p class="tl-sub" data-en="National Institute of Technology Warangal" data-hi="राष्ट्रीय प्रौद्योगिकी संस्थान वारंगल">National Institute of Technology Warangal</p>
-        <p class="tl-desc" data-en="Research internship in the Organic Chemistry Research Laboratory under the guidance of Prof. Venkata Sri Lakshmi, working alongside PhD scholars." data-hi="प्रो. वेंकट श्री लक्ष्मी के मार्गदर्शन में कार्बनिक रसायन अनुसंधान प्रयोगशाला में पीएचडी विद्वानों के साथ अनुसंधान इंटर्नशिप।">Research internship in the Organic Chemistry Research Laboratory under the guidance of Prof. Venkata Sri Lakshmi, working alongside PhD scholars.</p>
+        <p class="tl-desc" data-en="Worked under Prof. P.V. Srilakshmi for 4 weeks during August and September 2026 in her Organic Chemistry Research Laboratory on the project titled &quot;Synthesis of Dipeptides&quot;. Learned key research techniques, gained hands-on laboratory experience, and worked alongside PhD scholars in a rigorous research environment." data-hi="प्रो. पी.वी. श्रीलक्ष्मी के मार्गदर्शन में अगस्त और सितंबर 2026 के दौरान 4 सप्ताह के लिए उनकी कार्बनिक रसायन अनुसंधान प्रयोगशाला में &quot;सिंथेसिस ऑफ डिपेप्टाइड्स&quot; परियोजना पर काम किया। अनुसंधान तकनीकें सीखीं और पीएचडी विद्वानों के साथ अनुभव प्राप्त किया।">Worked under Prof. P.V. Srilakshmi for 4 weeks during August and September 2026 in her Organic Chemistry Research Laboratory on the project titled "Synthesis of Dipeptides". Learned key research techniques, gained hands-on laboratory experience, and worked alongside PhD scholars in a rigorous research environment.</p>
       </div></div>
       <div class="tl-item"><div class="tl-dot gld"></div><div class="tl-body">
         <span class="tl-date" data-en="Guided Mentorship" data-hi="निर्देशित मार्गदर्शन">Guided Mentorship</span>
