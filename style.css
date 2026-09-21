@@ -82,43 +82,74 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   letter-spacing: 0.04em;
 }
 
-/* MICRO AESTHETIC LIVE VISITOR PILL (TOP LEFT SIDE) */
-.logo-live-pill {
+/* FLOATING TOP-LEFT LIVE VISITOR BAR (OUTSIDE NAVBAR ISLAND) */
+.top-left-visitor-bar {
+  position: fixed;
+  top: 1.15rem;
+  left: 1.8rem;
+  z-index: 10001;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.22);
-  padding: 0.18rem 0.55rem;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06), 0 4px 10px rgba(0, 0, 0, 0.03);
+  padding: 0.42rem 0.95rem;
   border-radius: 100px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--txt);
+  transition: all 0.3s var(--ease2);
+}
+
+[data-theme="dark"] .top-left-visitor-bar {
+  background: rgba(12, 20, 37, 0.85);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+}
+
+.top-left-visitor-bar:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
+}
+
+/* SLOWLY ROTATING EARTH SCIENTIFIC ICON */
+.vc-earth-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  animation: spinEarth 14s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spinEarth {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.top-v-label {
   font-size: 0.72rem;
   font-weight: 700;
-  margin-left: 0.35rem;
-  line-height: 1;
-  transition: all 0.25s ease;
+  color: var(--txt2);
+  letter-spacing: 0.04em;
 }
 
-[data-theme="dark"] .logo-live-pill {
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.3);
-}
-
-.logo-live-pill:hover {
-  border-color: rgba(16, 185, 129, 0.5);
-  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
-}
-
-.logo-vc-num {
+.top-v-num {
   font-family: var(--f);
-  font-size: 0.74rem;
+  font-size: 0.82rem;
   font-weight: 800;
-  color: #10b981;
+  color: #38bdf8;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
-[data-theme="dark"] .logo-vc-num {
-  color: #34d399;
+[data-theme="light"] .top-v-num {
+  color: var(--blue);
 }
 
 .nav-links {
@@ -1388,8 +1419,33 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   .stats-wrap{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:768px){
-  .nav-floating { width: calc(100% - 1.5rem); top: 0.8rem; }
-  .nav-island { padding: 0.55rem 0.9rem; }
+  .top-left-visitor-bar {
+    top: 0.82rem;
+    left: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.72rem;
+    z-index: 10002;
+  }
+  .top-left-visitor-bar .vc-earth-icon {
+    font-size: 0.88rem;
+  }
+  .top-v-label {
+    font-size: 0.68rem;
+  }
+  .top-v-num {
+    font-size: 0.78rem;
+  }
+  .nav-floating {
+    width: auto;
+    top: 0.82rem;
+    left: auto;
+    right: 0.75rem;
+    transform: none;
+    max-width: calc(100% - 10.5rem);
+  }
+  .nav-island { padding: 0.45rem 0.8rem; gap: 0.5rem; }
+  .logo-name { font-size: 0.95rem; }
+  .logo-sub { font-size: 0.65rem; padding: 0.1rem 0.45rem; }
   .nav-actions { display: none !important; }
   .hamburger { display: flex !important; z-index: 10001; }
 
