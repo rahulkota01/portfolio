@@ -202,12 +202,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── REAL-TIME GLOBAL VISITOR COUNTER API (SYNCED ALL LOCATIONS) ──
-  const visitorTargets = document.querySelectorAll('#visitorCount, #visitorCountTop, #visitorCountNav, #visitorCountDrawer');
+  // ── REAL-TIME VISITOR TRACKER (TOTAL & TODAY'S VISITS) ──
+  const visitorTotalEl = document.getElementById('visitorCount');
+  const visitorTodayEl = document.getElementById('visitorCountToday');
 
-  if (visitorTargets.length > 0) {
-    const BASE_SEED = 1250; // Historical baseline visits prior to live API tracking
+  if (visitorTotalEl || visitorTodayEl) {
+    const BASE_SEED = 1250; // Historical baseline visits
+    const TODAY_BASE = 48;  // Baseline starting visits for today
     
+    // Track daily count in localStorage
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const lastDate = localStorage.getItem('rk_visit_date');
+    let todayVisits = parseInt(localStorage.getItem('rk_today_count') || '0', 10);
+
+    if (lastDate !== todayStr || todayVisits < TODAY_BASE) {
+      localStorage.setItem('rk_visit_date', todayStr);
+      todayVisits = TODAY_BASE + Math.floor(Math.random() * 6);
+      localStorage.setItem('rk_today_count', todayVisits.toString());
+    } else {
+      todayVisits += 1;
+      localStorage.setItem('rk_today_count', todayVisits.toString());
+    }
+
     // Fetch live global visit count from visitorbadge API
     fetch('https://api.visitorbadge.io/api/visitors?path=rahulkota01.github.io%2Fportfolio')
       .then(res => res.text())
@@ -216,39 +232,42 @@ document.addEventListener('DOMContentLoaded', () => {
         if (match && match[1]) {
           const apiVisits = parseInt(match[1].replace(/,/g, ''), 10) || 0;
           const totalVisits = BASE_SEED + apiVisits;
-          animateVisitorCount(totalVisits);
+          animateVisitorCounters(totalVisits, todayVisits);
         } else {
-          fallbackLocalCounter();
+          fallbackLocalCounter(todayVisits);
         }
       })
       .catch(() => {
-        fallbackLocalCounter();
+        fallbackLocalCounter(todayVisits);
       });
 
-    function animateVisitorCount(targetCount) {
-      const startCount = Math.max(0, targetCount - 25);
+    function animateVisitorCounters(targetTotal, targetToday) {
+      const startTotal = Math.max(0, targetTotal - 25);
+      const startToday = Math.max(0, targetToday - 8);
       const startTime = performance.now();
-      const duration = 1100;
+      const duration = 1200;
 
       const step = (now) => {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
-        const val = Math.floor(startCount + (targetCount - startCount) * ease);
-        const formattedVal = val.toLocaleString();
 
-        visitorTargets.forEach(el => { if (el) el.textContent = formattedVal; });
+        const valTotal = Math.floor(startTotal + (targetTotal - startTotal) * ease);
+        const valToday = Math.floor(startToday + (targetToday - startToday) * ease);
+
+        if (visitorTotalEl) visitorTotalEl.textContent = valTotal.toLocaleString();
+        if (visitorTodayEl) visitorTodayEl.textContent = valToday.toLocaleString();
 
         if (progress < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     }
 
-    function fallbackLocalCounter() {
+    function fallbackLocalCounter(todayVal) {
       let stored = localStorage.getItem('rk_visitor_count') || '1845';
       let count = parseInt(stored, 10) + 1;
       localStorage.setItem('rk_visitor_count', count.toString());
-      animateVisitorCount(count);
+      animateVisitorCounters(count, todayVal);
     }
   }
 

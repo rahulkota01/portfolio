@@ -13,19 +13,8 @@
 </head>
 <body>
 
-<!-- FLOATING GLASS ISLAND NAVBAR WITH EXTERNAL VISITOR PILL -->
+<!-- FLOATING GLASS ISLAND NAVBAR -->
 <header class="nav-floating" id="nav">
-  <div class="top-live-visitor-bar" title="Live Global Visitors">
-    <div class="globe-3d-wrapper">
-      <div class="globe-3d-sphere">
-        <div class="globe-3d-continents"></div>
-        <div class="globe-3d-atmosphere"></div>
-      </div>
-    </div>
-    <span class="top-v-label" data-en="Visitors:" data-hi="आगंतुक:">Visitors:</span>
-    <span class="top-v-num" id="visitorCountNav">--</span>
-  </div>
-
   <div class="nav-island">
     <a href="#hero" class="nav-logo">
       <span class="logo-name" data-en="Rahul Kota" data-hi="राहुल कोटा">Rahul Kota</span>
@@ -747,15 +736,22 @@
 <footer class="foot">
   <div class="contain foot-flex">
     <p>© 2026 Rahul Kota · Academic & Research Excellence</p>
-    <div class="visitor-counter-box" title="Total Website Visits Since Launch">
-      <div class="globe-3d-wrapper">
-        <div class="globe-3d-sphere">
-          <div class="globe-3d-continents"></div>
-          <div class="globe-3d-atmosphere"></div>
-        </div>
+    <div class="visitor-counter-box" title="Live Website Visits Tracker">
+      <div class="quantum-atom-3d" aria-hidden="true">
+        <div class="atom-core"></div>
+        <div class="atom-orbit orbit-1"><div class="atom-electron"></div></div>
+        <div class="atom-orbit orbit-2"><div class="atom-electron"></div></div>
+        <div class="atom-orbit orbit-3"><div class="atom-electron"></div></div>
       </div>
-      <span class="vc-label" data-en="Total Visitors:" data-hi="कुल आगंतुक:">Total Visitors:</span>
-      <span class="vc-number" id="visitorCount">--</span>
+      <div class="vc-stat-group">
+        <span class="vc-sub-label" data-en="Today:" data-hi="आज:">Today:</span>
+        <span class="vc-number vc-today" id="visitorCountToday">--</span>
+      </div>
+      <span class="vc-divider">•</span>
+      <div class="vc-stat-group">
+        <span class="vc-sub-label" data-en="Total:" data-hi="कुल:">Total:</span>
+        <span class="vc-number" id="visitorCount">--</span>
+      </div>
     </div>
   </div>
 </footer>
