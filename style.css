@@ -1990,11 +1990,19 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   }
 }
 
+/* FOOTER COUNTERS WRAPPER FOR SEPARATE BOXES */
+.footer-counters-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
 /* FOOTER VISITOR COUNTER BOX (OFFICIAL SCIENTIFIC 3D ATOM STYLING) */
 .visitor-counter-box {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 0.45rem 1.15rem;
@@ -2095,18 +2103,22 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   100% { transform: rotateX(65deg) rotateY(140deg) rotateZ(360deg); }
 }
 
-.vc-stat-group {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
+/* 3D QUANTUM CORE BADGE (BOX 2) */
+.quantum-core-badge {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8 20%, #1d4ed8 80%);
+  box-shadow: 0 0 8px #38bdf8, 0 0 16px rgba(56, 189, 248, 0.7);
+  flex-shrink: 0;
+  animation: corePulse 2s ease-in-out infinite alternate;
 }
 
-.vc-sub-label {
-  font-size: 0.74rem;
+.vc-label {
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--txt3);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 .vc-number {
@@ -2126,14 +2138,14 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   color: #22c55e !important;
 }
 
-.vc-divider {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 0.85rem;
-  line-height: 1;
+
+
+@media (max-width: 768px) {
+  .footer-counters-wrap {
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .visitor-counter-box {
+    padding: 0.38rem 0.85rem;
+  }
 }
-
-[data-theme="light"] .vc-divider {
-  color: rgba(0, 0, 0, 0.25);
-}
-
-
