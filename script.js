@@ -202,76 +202,151 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── REAL-TIME VISITOR TRACKER (TOTAL, TOP, & TODAY'S VISITS) ──
+  // ── REAL-TIME LEGITIMATE VISITOR TRACKER (DAILY MIDNIGHT RESET & GLOBAL TOTAL) ──
   const visitorTotalEl = document.getElementById('visitorCount');
   const visitorTodayEl = document.getElementById('visitorCountToday');
   const visitorNavEl = document.getElementById('visitorCountNav');
 
   if (visitorTotalEl || visitorTodayEl || visitorNavEl) {
-    const BASE_SEED = 1250; // Historical baseline visits
-    const TODAY_BASE = 48;  // Baseline starting visits for today
-    
-    // Track daily count in localStorage
-    const todayStr = new Date().toISOString().slice(0, 10);
-    const lastDate = localStorage.getItem('rk_visit_date');
-    let todayVisits = parseInt(localStorage.getItem('rk_today_count') || '0', 10);
+    const getTodayKey = () => {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      return `${year}${month}${day}`;
+    };
 
-    if (lastDate !== todayStr || todayVisits < TODAY_BASE) {
-      localStorage.setItem('rk_visit_date', todayStr);
-      todayVisits = TODAY_BASE + Math.floor(Math.random() * 6);
-      localStorage.setItem('rk_today_count', todayVisits.toString());
-    } else {
-      todayVisits += 1;
-      localStorage.setItem('rk_today_count', todayVisits.toString());
-    }
+    const parseVisitorCount = (svgText) => {
+      if (!svgText) return null;
+      const match = svgText.match(/VISITORS:\s*([\d,]+)/i) || svgText.match(/font-weight="bold">\s*([\d,]+)/i);
+      if (match && match[1]) {
+        return parseInt(match[1].replace(/,/g, ''), 10);
+      }
+      return null;
+    };
 
-    // Fetch live global visit count from visitorbadge API
-    fetch('https://api.visitorbadge.io/api/visitors?path=rahulkota01.github.io%2Fportfolio')
-      .then(res => res.text())
-      .then(svgText => {
-        const match = svgText.match(/VISITORS:\s*([\d,]+)/i) || svgText.match(/font-weight="bold">\s*([\d,]+)/i);
-        if (match && match[1]) {
-          const apiVisits = parseInt(match[1].replace(/,/g, ''), 10) || 0;
-          const totalVisits = BASE_SEED + apiVisits;
-          animateVisitorCounters(totalVisits, todayVisits);
-        } else {
-          fallbackLocalCounter(todayVisits);
-        }
-      })
-      .catch(() => {
-        fallbackLocalCounter(todayVisits);
-      });
-
-    function animateVisitorCounters(targetTotal, targetToday) {
-      const startTotal = Math.max(0, targetTotal - 25);
-      const startToday = Math.max(0, targetToday - 8);
+    const animateCounter = (el, targetVal, duration = 800) => {
+      if (!el || targetVal === null || targetVal === undefined) return;
+      const startVal = Math.max(0, targetVal > 15 ? targetVal - 15 : 0);
       const startTime = performance.now();
-      const duration = 1200;
 
       const step = (now) => {
         const elapsed = now - startTime;
         const progress = Math.min(elapsed / duration, 1);
         const ease = 1 - Math.pow(1 - progress, 3);
-
-        const valTotal = Math.floor(startTotal + (targetTotal - startTotal) * ease);
-        const valToday = Math.floor(startToday + (targetToday - startToday) * ease);
-
-        if (visitorTotalEl) visitorTotalEl.textContent = valTotal.toLocaleString();
-        if (visitorNavEl) visitorNavEl.textContent = valTotal.toLocaleString();
-        if (visitorTodayEl) visitorTodayEl.textContent = valToday.toLocaleString();
-
-        if (progress < 1) requestAnimationFrame(step);
+        const current = Math.floor(startVal + (targetVal - startVal) * ease);
+        el.textContent = current.toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = targetVal.toLocaleString();
+        }
       };
       requestAnimationFrame(step);
-    }
+    };
 
-    function fallbackLocalCounter(todayVal) {
-      let stored = localStorage.getItem('rk_visitor_count') || '1845';
-      let count = parseInt(stored, 10) + 1;
-      localStorage.setItem('rk_visitor_count', count.toString());
-      animateVisitorCounters(count, todayVal);
-    }
+    const loadRealVisitorCounts = () => {
+      const todayKey = getTodayKey();
+      const lastRecordedDate = localStorage.getItem('rk_visit_date');
+      const isNewDay = lastRecordedDate !== todayKey;
+
+      if (isNewDay) {
+        localStorage.setItem('rk_visit_date', todayKey);
+        localStorage.setItem('rk_today_count', '0');
+      }
+
+      // Check session to avoid duplicate count spamming on quick refreshes
+      const sessionRecorded = sessionStorage.getItem('rk_session_recorded_' + todayKey);
+
+      // Endpoints for real counts
+      const totalUrl = 'https://api.visitorbadge.io/api/visitors?path=rahulkota01.github.io%2Fportfolio';
+      const dailyUrl = `https://api.visitorbadge.io/api/visitors?path=rahulkota_daily_${todayKey}`;
+
+      if (!sessionRecorded) {
+        // Record new legitimate visit for both total and today
+        Promise.allSettled([
+          fetch(totalUrl).then(res => res.text()),
+          fetch(dailyUrl).then(res => res.text())
+        ]).then(([totalResult, dailyResult]) => {
+          let totalCount = null;
+          let todayCount = null;
+
+          if (totalResult.status === 'fulfilled') {
+            totalCount = parseVisitorCount(totalResult.value);
+            if (totalCount !== null) {
+              localStorage.setItem('rk_total_count', totalCount.toString());
+              sessionStorage.setItem('rk_session_total', totalCount.toString());
+            }
+          }
+
+          if (dailyResult.status === 'fulfilled') {
+            todayCount = parseVisitorCount(dailyResult.value);
+            if (todayCount !== null) {
+              localStorage.setItem('rk_today_count', todayCount.toString());
+              sessionStorage.setItem('rk_session_today', todayCount.toString());
+            }
+          }
+
+          sessionStorage.setItem('rk_session_recorded_' + todayKey, 'true');
+
+          const finalTotal = totalCount !== null ? totalCount : parseInt(localStorage.getItem('rk_total_count') || '0', 10);
+          const finalToday = todayCount !== null ? todayCount : parseInt(localStorage.getItem('rk_today_count') || '0', 10);
+
+          if (visitorTotalEl) animateCounter(visitorTotalEl, finalTotal);
+          if (visitorNavEl) animateCounter(visitorNavEl, finalTotal);
+          if (visitorTodayEl) animateCounter(visitorTodayEl, finalToday);
+        }).catch(() => {
+          applyFallbackCounts(todayKey);
+        });
+      } else {
+        // Already recorded this session: use session/cached counts to keep it legit and fast
+        const cachedTotal = parseInt(sessionStorage.getItem('rk_session_total') || localStorage.getItem('rk_total_count') || '0', 10);
+        const cachedToday = parseInt(sessionStorage.getItem('rk_session_today') || localStorage.getItem('rk_today_count') || '0', 10);
+
+        if (visitorTotalEl) animateCounter(visitorTotalEl, cachedTotal);
+        if (visitorNavEl) animateCounter(visitorNavEl, cachedTotal);
+        if (visitorTodayEl) animateCounter(visitorTodayEl, cachedToday);
+      }
+    };
+
+    const applyFallbackCounts = (todayKey) => {
+      const storedDate = localStorage.getItem('rk_visit_date');
+      const fallbackTotal = parseInt(localStorage.getItem('rk_total_count') || '0', 10);
+      const fallbackToday = storedDate === todayKey ? parseInt(localStorage.getItem('rk_today_count') || '0', 10) : 0;
+
+      if (visitorTotalEl) animateCounter(visitorTotalEl, fallbackTotal);
+      if (visitorNavEl) animateCounter(visitorNavEl, fallbackTotal);
+      if (visitorTodayEl) animateCounter(visitorTodayEl, fallbackToday);
+    };
+
+    // Automated Midnight Reset Timer (resets daily counter to 0 at midnight local time)
+    const scheduleMidnightReset = () => {
+      const now = new Date();
+      const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0, 0);
+      const msUntilMidnight = Math.max(1000, nextMidnight.getTime() - now.getTime());
+
+      setTimeout(() => {
+        const newTodayKey = getTodayKey();
+        localStorage.setItem('rk_visit_date', newTodayKey);
+        localStorage.setItem('rk_today_count', '0');
+        sessionStorage.removeItem('rk_session_today');
+
+        // Immediately show 0 for the fresh day
+        if (visitorTodayEl) visitorTodayEl.textContent = '0';
+
+        // Re-load counts for the fresh day
+        loadRealVisitorCounts();
+
+        // Recursively schedule next midnight
+        scheduleMidnightReset();
+      }, msUntilMidnight);
+    };
+
+    // Initialize visitor tracker and midnight reset timer
+    loadRealVisitorCounts();
+    scheduleMidnightReset();
   }
+
 
   // ── ANIMATED COUNTERS ──
   let counterDone = false;
