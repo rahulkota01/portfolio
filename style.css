@@ -577,7 +577,7 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   box-shadow: 0 10px 25px rgba(201,162,39,0.25);
 }
 
-.hero-socials { display: flex; gap: 0.8rem; }
+.hero-socials { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 .hero-socials a {
   width: 42px; height: 42px; border-radius: 50%;
   border: 1.5px solid var(--border); display: flex;
@@ -585,6 +585,13 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   color: var(--txt3); transition: all 0.25s;
 }
 .hero-socials a:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+.hero-socials a[title="ORCiD"]:hover { border-color: #a6ce39; color: #a6ce39; }
+.hero-socials a[title="ResearchGate"]:hover { border-color: #00ccbb; color: #00ccbb; }
+.hero-socials a[title="Google Scholar"]:hover { border-color: #4285f4; color: #4285f4; }
+.hero-socials a[title="LinkedIn"]:hover { border-color: #0a66c2; color: #0a66c2; }
+.hero-socials a[title="Email"]:hover { border-color: #ea4335; color: #ea4335; }
+.hero-socials a[title="Phone"]:hover { border-color: #10b981; color: #10b981; }
+
 
 /* HERO RIGHT - POLARIS SCREEN-FILLING PORTRAIT PRESENTATION FRAME */
 .hero-photo-right {
