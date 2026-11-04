@@ -1798,6 +1798,263 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   height: 13px;
 }
 
+/* ── SCHOLARLY SERVICE & PEER REVIEW SECTION ── */
+.scholarly-service-wrap {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.scholarly-service-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.1) 0%, rgba(255, 255, 255, 0.035) 50%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  padding: 2.2rem 2.4rem;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s var(--ease2), border-color 0.35s, box-shadow 0.35s;
+}
+
+.scholarly-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.08);
+}
+
+.service-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 1.2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.service-eyebrow-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.service-eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.service-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: rgba(34, 197, 94, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.service-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.service-journal-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journal-abbr {
+  font-family: var(--fs);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.journal-subtext {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 0.75rem;
+  line-height: 1;
+}
+
+.service-card-main {
+  margin-top: 1.4rem;
+}
+
+.service-journal-title {
+  font-family: var(--fs);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+}
+
+.service-journal-meta {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  line-height: 1.5;
+  margin-bottom: 1.15rem;
+}
+
+.service-journal-meta strong {
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+.meta-sep {
+  color: rgba(255, 255, 255, 0.25);
+  margin: 0 0.15rem;
+}
+
+.service-narrative {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 1.35rem;
+}
+
+.service-foundation-box {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.15rem 1.4rem;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  margin-bottom: 1.4rem;
+}
+
+.foundation-icon-col {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.foundation-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--blue-l);
+  display: block;
+}
+
+.foundation-content {
+  flex: 1;
+}
+
+.foundation-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+.foundation-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.foundation-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.foundation-org {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.foundation-text {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-meta-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cell-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.cell-val {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #38bdf8;
+  line-height: 1.45;
+}
+
+/* Subheading for International Societies */
+.memberships-subheading-wrap {
+  margin-top: 3.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sub-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.memberships-subheading {
+  font-family: var(--fs);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
 /* ── PROFESSIONAL MEMBERSHIPS SECTION STYLING ── */
 .membership-grid {
   display: grid;
@@ -1978,8 +2235,110 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   color: var(--blue);
 }
 
-/* Mobile Responsiveness for Memberships */
+/* Light mode adjustments for scholarly service card */
+[data-theme="light"] .scholarly-service-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .service-card-header {
+  border-bottom-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .service-status-pill {
+  background: rgba(34, 197, 94, 0.08);
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.25);
+}
+
+[data-theme="light"] .service-journal-badge {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .journal-abbr {
+  color: var(--txt);
+}
+
+[data-theme="light"] .journal-subtext {
+  color: var(--txt3);
+  border-left-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .service-journal-title {
+  color: var(--txt);
+}
+
+[data-theme="light"] .service-journal-meta {
+  color: var(--txt2);
+}
+
+[data-theme="light"] .service-journal-meta strong {
+  color: var(--txt);
+}
+
+[data-theme="light"] .meta-sep {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .service-narrative {
+  color: var(--txt2);
+}
+
+[data-theme="light"] .service-foundation-box {
+  background: rgba(37, 99, 235, 0.04);
+  border-color: rgba(37, 99, 235, 0.15);
+}
+
+[data-theme="light"] .foundation-title {
+  color: var(--txt);
+}
+
+[data-theme="light"] .foundation-text {
+  color: var(--txt2);
+}
+
+[data-theme="light"] .service-meta-grid {
+  border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-theme="light"] .cell-val {
+  color: var(--blue);
+}
+
+[data-theme="light"] .memberships-subheading {
+  color: var(--txt);
+}
+
+/* Mobile Responsiveness for Memberships & Scholarly Service */
 @media (max-width: 768px) {
+  .scholarly-service-card {
+    padding: 1.4rem;
+    border-radius: 18px;
+  }
+  .service-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .service-journal-badge {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .service-journal-title {
+    font-size: 1.25rem;
+  }
+  .service-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .service-foundation-box {
+    padding: 1rem 1.1rem;
+    gap: 0.75rem;
+  }
+  .memberships-subheading-wrap {
+    margin-top: 2.2rem;
+  }
   .membership-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
