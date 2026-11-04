@@ -40,10 +40,10 @@
       <a href="#about" class="nav-pill" data-en="About" data-hi="परिचय">About</a>
       <a href="#highlights" class="nav-pill" data-en="Highlights" data-hi="मुख्य बातें">Highlights</a>
       <a href="#research" class="nav-pill" data-en="Research" data-hi="शोध">Research</a>
-      <a href="#insights" class="nav-pill" data-en="Insights" data-hi="विचार">Insights</a>
-      <a href="#memberships" class="nav-pill" data-en="Affiliations & Service" data-hi="संबद्धता और सेवा">Affiliations & Service</a>
+      <a href="#insights" class="nav-pill subpage-nav-link" data-subpage="insights" data-en="Insights" data-hi="विचार">Insights</a>
+      <a href="#memberships" class="nav-pill subpage-nav-link" data-subpage="memberships" data-en="Affiliations & Service" data-hi="संबद्धता और सेवा">Affiliations & Service</a>
       <a href="#education" class="nav-pill" data-en="Education" data-hi="शिक्षा">Education</a>
-      <a href="#skills" class="nav-pill" data-en="Skills" data-hi="कौशल">Skills</a>
+      <a href="#skills" class="nav-pill subpage-nav-link" data-subpage="skills" data-en="Skills" data-hi="कौशल">Skills</a>
       <a href="#contact" class="nav-pill mobile-only-link" data-en="Contact" data-hi="संपर्क">Contact</a>
       
       <div class="mobile-drawer-footer">
@@ -172,90 +172,238 @@
   </div>
 </section>
 
-<!-- HIGHLIGHTS SINGLE-CARD UNCROPPED CAROUSEL SHOWCASE -->
-<section id="highlights" class="section dark-bg">
-  <div class="contain-lg">
+<!-- GOATED LEVEL EXPANSIVE HIGHLIGHTS SHOWCASE (90% VIEWPORT COVERAGE) -->
+<section id="highlights" class="section dark-bg hl-full-section">
+  <div class="hl-ambient-glow" id="hlAmbientGlow"></div>
+  <div class="hl-contain-wide">
     <div class="hl-header-flex">
       <div>
-        <span class="label lt" data-en="Recent Highlights" data-hi="हालिया उपलब्धियाँ">Recent Highlights</span>
-        <h2 class="heading lt" data-en="Where I've Been & Research Journey" data-hi="मेरी अनुसंधान यात्रा और अनुभव">Where I've Been & Research Journey</h2>
+        <span class="label lt" data-en="Recent Highlights & Fieldwork" data-hi="हालिया उपलब्धियाँ और फील्डवर्क">Recent Highlights & Fieldwork</span>
+        <h2 class="heading lt" data-en="Research Journey & Academic Milestones" data-hi="अनुसंधान यात्रा और शैक्षणिक मील के पत्थर">Research Journey & Academic Milestones</h2>
+        <p class="hl-subhead" data-en="Immersive documentation from hands-on laboratory internships, national summits, symposium awards, and advanced workshops." data-hi="हैंड्स-ऑन प्रयोगशाला इंटर्नशिप, राष्ट्रीय सम्मेलनों, संगोष्ठी पुरस्कारों और उन्नत कार्यशालाओं का व्यापक दस्तावेज।">Immersive documentation from hands-on laboratory internships, national summits, symposium awards, and advanced workshops.</p>
       </div>
-      <div class="hl-carousel-controls">
-        <button id="hlPrevBtn" class="hl-nav-btn" aria-label="Previous Slide"><i data-lucide="chevron-left"></i></button>
-        <button id="hlNextBtn" class="hl-nav-btn" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
+      <div class="hl-controls-cluster">
+        <div class="hl-counter-pill" id="hlCounterPill">
+          <span class="hl-active-num" id="hlCurrentNum">01</span>
+          <span class="hl-num-slash">/</span>
+          <span class="hl-total-num">05</span>
+        </div>
+        <div class="hl-carousel-controls">
+          <button id="hlPrevBtn" class="hl-nav-btn" aria-label="Previous Slide"><i data-lucide="chevron-left"></i></button>
+          <button id="hlNextBtn" class="hl-nav-btn" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
+        </div>
       </div>
     </div>
     
     <div class="hl-showcase-container" id="hlShowcaseContainer">
+      <!-- Hairline Auto-advance Progress Line -->
+      <div class="hl-progress-track">
+        <div class="hl-progress-fill" id="hlProgressFill"></div>
+      </div>
+
       <div class="hl-slides-track" id="hlSlidesTrack">
         
         <!-- SLIDE 01: NIT WARANGAL - PROF SRILAKSHMI -->
-        <div class="hl-slide" data-slide="0">
-          <div class="hl-image-frame">
-            <img src="./assets/nitw_prof_srilakshmi.png" alt="With Prof. P.V. Srilakshmi at NIT Warangal" class="hl-full-img"/>
+        <div class="hl-slide" data-slide="0" data-theme-color="gold">
+          <div class="hl-stage-visual">
+            <div class="hl-image-frame" data-img-src="./assets/nitw_prof_srilakshmi.png" data-img-caption="With Prof. P.V. Srilakshmi, Department of Chemistry, NIT Warangal">
+              <img src="./assets/nitw_prof_srilakshmi.png" alt="With Prof. P.V. Srilakshmi at NIT Warangal" class="hl-full-img"/>
+              <button class="hl-zoom-pill" data-lightbox-trigger="./assets/nitw_prof_srilakshmi.png" data-caption="With Prof. P.V. Srilakshmi, Dept. of Chemistry, National Institute of Technology Warangal (NITW)">
+                <i data-lucide="maximize-2"></i>
+                <span data-en="Inspect Photo" data-hi="फोटो देखें">Inspect Photo</span>
+              </button>
+            </div>
           </div>
-          <div class="hl-slide-caption">
-            <div class="hl-tag gold"><i data-lucide="microscope"></i> NIT Warangal · Research Mentorship</div>
-            <h3 data-en="Organic Chemistry Research Mentorship" data-hi="कार्बनिक रसायन विज्ञान अनुसंधान मार्गदर्शन">Organic Chemistry Research Mentorship</h3>
-            <p data-en="With Prof. P.V. Srilakshmi, Professor, Dept. of Chemistry, National Institute of Technology Warangal (NITW). Guided during the 4-week internship on the Synthesis of Dipeptides project alongside PhD scholars." data-hi="प्रो. पी.वी. श्रीलक्ष्मी (रसायन विज्ञान विभाग, एनआईटी वारंगल) के साथ। डिपेप्टाइड्स के संश्लेषण परियोजना पर 4-सप्ताह की इंटर्नशिप का मार्गदर्शन।">With Prof. P.V. Srilakshmi, Professor, Dept. of Chemistry, National Institute of Technology Warangal (NITW). Guided during the 4-week internship on the Synthesis of Dipeptides project alongside PhD scholars.</p>
+          <div class="hl-stage-editorial">
+            <div class="hl-card-topbar">
+              <div class="hl-tag gold"><i data-lucide="microscope"></i> <span data-en="NIT Warangal · Research Mentorship" data-hi="एनआईटी वारंगल · अनुसंधान मार्गदर्शन">NIT Warangal · Research Mentorship</span></div>
+              <span class="hl-slide-tag-year">2026</span>
+            </div>
+            <h3 class="hl-editorial-title" data-en="Organic Chemistry Research Mentorship" data-hi="कार्बनिक रसायन विज्ञान अनुसंधान मार्गदर्शन">Organic Chemistry Research Mentorship</h3>
+            
+            <div class="hl-meta-chips">
+              <span class="hl-chip"><i data-lucide="user-check"></i> <strong>Mentor:</strong> Prof. P.V. Srilakshmi</span>
+              <span class="hl-chip"><i data-lucide="map-pin"></i> <strong>Host:</strong> NIT Warangal</span>
+              <span class="hl-chip"><i data-lucide="flask-conical"></i> <strong>Project:</strong> Synthesis of Dipeptides</span>
+            </div>
+
+            <p class="hl-editorial-desc" data-en="Worked directly under Prof. P.V. Srilakshmi, Professor in the Department of Chemistry at the National Institute of Technology Warangal (NITW). Participated in hands-on organic synthesis, peptide coupling protocols, and laboratory characterization in her Organic Chemistry Research Laboratory alongside PhD scholars." data-hi="नेशनल इंस्टीट्यूट ऑफ टेक्नोलॉजी वारंगल (एनआईटीडब्ल्यू) के रसायन विज्ञान विभाग में प्रो. पी.वी. श्रीलक्ष्मी के अधीन काम किया। पीएचडी विद्वानों के साथ कार्बनिक रसायन अनुसंधान प्रयोगशाला में हैंड्स-ऑन पेप्टाइड संश्लेषण और प्रयोगशाला तकनीकों में भाग लिया।">
+              Worked directly under Prof. P.V. Srilakshmi, Professor in the Department of Chemistry at the National Institute of Technology Warangal (NITW). Participated in hands-on organic synthesis, peptide coupling protocols, and laboratory characterization in her Organic Chemistry Research Laboratory alongside PhD scholars.
+            </p>
+
+            <div class="hl-stage-footer">
+              <span class="hl-duration-pill"><i data-lucide="clock"></i> 4-Week Intensive Lab Traineeship</span>
+            </div>
           </div>
         </div>
 
         <!-- SLIDE 02: NIT WARANGAL - CAMPUS ENTRANCE -->
-        <div class="hl-slide" data-slide="1">
-          <div class="hl-image-frame">
-            <img src="./assets/nitw_campus_internship.png" alt="NIT Warangal Main Entrance" class="hl-full-img"/>
+        <div class="hl-slide" data-slide="1" data-theme-color="blue">
+          <div class="hl-stage-visual">
+            <div class="hl-image-frame" data-img-src="./assets/nitw_campus_internship.png" data-img-caption="National Institute of Technology Warangal Main Campus Entrance">
+              <img src="./assets/nitw_campus_internship.png" alt="NIT Warangal Main Entrance" class="hl-full-img"/>
+              <button class="hl-zoom-pill" data-lightbox-trigger="./assets/nitw_campus_internship.png" data-caption="National Institute of Technology Warangal Main Campus Entrance">
+                <i data-lucide="maximize-2"></i>
+                <span data-en="Inspect Photo" data-hi="फोटो देखें">Inspect Photo</span>
+              </button>
+            </div>
           </div>
-          <div class="hl-slide-caption">
-            <div class="hl-tag blue"><i data-lucide="building-2"></i> NIT Warangal · Internship 2026</div>
-            <h3 data-en="NIT Warangal Campus Internship" data-hi="एनआईटी वारंगल परिसर इंटर्नशिप">NIT Warangal Campus Internship</h3>
-            <p data-en="At the National Institute of Technology Warangal main campus during the research internship (August–September 2026), gaining hands-on peptide synthesis techniques." data-hi="अनुसंधान इंटर्नशिप (अगस्त-सितंबर 2026) के दौरान नेशनल इंस्टीट्यूट ऑफ टेक्नोलॉजी वारंगल के मुख्य परिसर में।">At the National Institute of Technology Warangal main campus during the research internship (August–September 2026), gaining hands-on peptide synthesis techniques.</p>
+          <div class="hl-stage-editorial">
+            <div class="hl-card-topbar">
+              <div class="hl-tag blue"><i data-lucide="building-2"></i> <span data-en="NIT Warangal · Institutional Traineeship" data-hi="एनआईटी वारंगल · संस्थागत इंटर्नशिप">NIT Warangal · Institutional Traineeship</span></div>
+              <span class="hl-slide-tag-year">2026</span>
+            </div>
+            <h3 class="hl-editorial-title" data-en="National Institute of Technology Warangal Campus" data-hi="नेशनल इंस्टीट्यूट ऑफ टेक्नोलॉजी वारंगल परिसर">National Institute of Technology Warangal Campus</h3>
+            
+            <div class="hl-meta-chips">
+              <span class="hl-chip"><i data-lucide="calendar"></i> <strong>Period:</strong> Aug – Sep 2026</span>
+              <span class="hl-chip"><i data-lucide="shield-check"></i> <strong>Institute:</strong> Institute of National Importance</span>
+              <span class="hl-chip"><i data-lucide="dna"></i> <strong>Focus:</strong> Medicinal & Peptide Chemistry</span>
+            </div>
+
+            <p class="hl-editorial-desc" data-en="Conducted on-campus laboratory research at the National Institute of Technology Warangal during the summer-autumn academic term. Gained fundamental perspective on academic laboratory culture, analytical rigor, safety standards, and multidisciplinary scientific problem solving in synthetic chemistry." data-hi="ग्रीष्मकालीन-शरद ऋतु शैक्षणिक सत्र के दौरान नेशनल इंस्टीट्यूट ऑफ टेक्नोलॉजी वारंगल में परिसर में प्रयोगशाला अनुसंधान का संचालन किया। शैक्षणिक प्रयोगशाला संस्कृति, विश्लेषणात्मक कठोरता और सिंथेटिक रसायन विज्ञान में अंतःविषय वैज्ञानिक समस्या निवारण पर अंतर्दृष्टि प्राप्त की।">
+              Conducted on-campus laboratory research at the National Institute of Technology Warangal during the summer-autumn academic term. Gained fundamental perspective on academic laboratory culture, analytical rigor, safety standards, and multidisciplinary scientific problem solving in synthetic chemistry.
+            </p>
+
+            <div class="hl-stage-footer">
+              <span class="hl-duration-pill"><i data-lucide="compass"></i> Hands-on Laboratory Immersion</span>
+            </div>
           </div>
         </div>
 
         <!-- SLIDE 03: IISC BANGALORE -->
-        <div class="hl-slide" data-slide="2">
-          <div class="hl-image-frame">
-            <img src="./assets/iisc_bangalore.jpg" alt="IISc Bangalore Summit" class="hl-full-img"/>
+        <div class="hl-slide" data-slide="2" data-theme-color="teal">
+          <div class="hl-stage-visual">
+            <div class="hl-image-frame" data-img-src="./assets/iisc_bangalore.jpg" data-img-caption="5th Health Care Summit 2025 at Indian Institute of Science (IISc), Bangalore">
+              <img src="./assets/iisc_bangalore.jpg" alt="IISc Bangalore Summit" class="hl-full-img"/>
+              <button class="hl-zoom-pill" data-lightbox-trigger="./assets/iisc_bangalore.jpg" data-caption="5th Health Care Summit 2025 at Indian Institute of Science (IISc), Bangalore">
+                <i data-lucide="maximize-2"></i>
+                <span data-en="Inspect Photo" data-hi="फोटो देखें">Inspect Photo</span>
+              </button>
+            </div>
           </div>
-          <div class="hl-slide-caption">
-            <div class="hl-tag teal"><i data-lucide="award"></i> IISc Bangalore · 2025</div>
-            <h3 data-en="5th Health Care Summit 2025" data-hi="5वां हेल्थ केयर शिखर सम्मेलन 2025">5th Health Care Summit 2025</h3>
-            <p data-en="Attended the national healthcare summit conference hosted at the prestigious Indian Institute of Science (IISc), Bangalore." data-hi="भारतीय विज्ञान संस्थान, बंगलौर में आयोजित राष्ट्रीय स्वास्थ्य देखभाल शिखर सम्मेलन में भाग लिया।">Attended the national healthcare summit conference hosted at the prestigious Indian Institute of Science (IISc), Bangalore.</p>
+          <div class="hl-stage-editorial">
+            <div class="hl-card-topbar">
+              <div class="hl-tag teal"><i data-lucide="award"></i> <span data-en="IISc Bangalore · National Summit" data-hi="आईआईएससी बैंगलोर · राष्ट्रीय शिखर सम्मेलन">IISc Bangalore · National Summit</span></div>
+              <span class="hl-slide-tag-year">2025</span>
+            </div>
+            <h3 class="hl-editorial-title" data-en="5th Health Care Summit 2025 · IISc Bangalore" data-hi="5वां हेल्थ केयर शिखर सम्मेलन 2025 · आईआईएससी बैंगलोर">5th Health Care Summit 2025 · IISc Bangalore</h3>
+            
+            <div class="hl-meta-chips">
+              <span class="hl-chip"><i data-lucide="map-pin"></i> <strong>Venue:</strong> IISc Bangalore</span>
+              <span class="hl-chip"><i data-lucide="calendar"></i> <strong>Date:</strong> June 2025</span>
+              <span class="hl-chip"><i data-lucide="activity"></i> <strong>Scope:</strong> Healthcare & Biomedical Frontiers</span>
+            </div>
+
+            <p class="hl-editorial-desc" data-en="Attended the flagship 5th Health Care Summit hosted at the premier Indian Institute of Science (IISc), Bangalore. Engaged with clinicians, scientific investigators, and biotechnology innovators discussing next-generation healthcare technologies, translational diagnostics, and medical devices." data-hi="प्रमुख भारतीय विज्ञान संस्थान (IISc), बैंगलोर में आयोजित प्रमुख 5वें हेल्थ केयर शिखर सम्मेलन में भाग लिया। अगली पीढ़ी की स्वास्थ्य प्रौद्योगिकियों, अनुवाद संबंधी निदान और चिकित्सा उपकरणों पर चर्चा करने वाले चिकित्सकों, वैज्ञानिकों और बायोटेक नवप्रवर्तकों के साथ बातचीत की।">
+              Attended the flagship 5th Health Care Summit hosted at the premier Indian Institute of Science (IISc), Bangalore. Engaged with clinicians, scientific investigators, and biotechnology innovators discussing next-generation healthcare technologies, translational diagnostics, and medical devices.
+            </p>
+
+            <div class="hl-stage-footer">
+              <span class="hl-duration-pill"><i data-lucide="zap"></i> National Science & Innovation Forum</span>
+            </div>
           </div>
         </div>
 
         <!-- SLIDE 04: POSTER PRESENTATION AWARD -->
-        <div class="hl-slide" data-slide="3">
-          <div class="hl-image-frame">
-            <img src="./assets/poster_presentation.jpg" alt="Poster Award Presentation" class="hl-full-img"/>
+        <div class="hl-slide" data-slide="3" data-theme-color="amber">
+          <div class="hl-stage-visual">
+            <div class="hl-image-frame" data-img-src="./assets/poster_presentation.jpg" data-img-caption="1st Place Award in Poster Presentation at National Pharmacy Week 2025 (SCRMP)">
+              <img src="./assets/poster_presentation.jpg" alt="Poster Award Presentation" class="hl-full-img"/>
+              <button class="hl-zoom-pill" data-lightbox-trigger="./assets/poster_presentation.jpg" data-caption="1st Place Award in Poster Presentation at National Pharmacy Week 2025 (SCRMP Gujarat Chapter)">
+                <i data-lucide="maximize-2"></i>
+                <span data-en="Inspect Photo" data-hi="फोटो देखें">Inspect Photo</span>
+              </button>
+            </div>
           </div>
-          <div class="hl-slide-caption">
-            <div class="hl-tag gold"><i data-lucide="trophy"></i> 1st Place Award · 2025</div>
-            <h3 data-en="Award-Winning Poster Presentation" data-hi="पुरस्कार विजेता पोस्टर प्रस्तुति">Award-Winning Poster Presentation</h3>
-            <p data-en="&quot;Pharmacists: Frontline Drivers of India's Vaccination Movement&quot; — Won First Place at National Pharmacy Week 2025." data-hi="&quot;फार्मासिस्ट: भारत के टीकाकरण अभियान के अग्रिम पंक्ति के चालक&quot; — राष्ट्रीय फार्मेसी सप्ताह 2025 में प्रथम पुरस्कार जीता।">"Pharmacists: Frontline Drivers of India's Vaccination Movement" — Won First Place at National Pharmacy Week 2025.</p>
+          <div class="hl-stage-editorial">
+            <div class="hl-card-topbar">
+              <div class="hl-tag gold"><i data-lucide="trophy"></i> <span data-en="1st Place Award · SCRMP 2025" data-hi="प्रथम पुरस्कार · SCRMP 2025">1st Place Award · SCRMP 2025</span></div>
+              <span class="hl-slide-tag-year">2025</span>
+            </div>
+            <h3 class="hl-editorial-title" data-en="Award-Winning Scientific Poster Presentation" data-hi="पुरस्कार विजेता वैज्ञानिक पोस्टर प्रस्तुति">Award-Winning Scientific Poster Presentation</h3>
+            
+            <div class="hl-meta-chips">
+              <span class="hl-chip"><i data-lucide="medal"></i> <strong>Result:</strong> 1st Prize Winner</span>
+              <span class="hl-chip"><i data-lucide="award"></i> <strong>Organizer:</strong> SCRMP Gujarat Chapter</span>
+              <span class="hl-chip"><i data-lucide="file-text"></i> <strong>Event:</strong> National Pharmacy Week</span>
+            </div>
+
+            <p class="hl-editorial-desc" data-en="Awarded First Prize for competitive poster presentation on &quot;Pharmacists: Frontline Drivers of India's Vaccination Movement&quot; organized by the Society of Clinical Research and Medical Professionals (SCRMP). Recognized for clarity of scientific communication, public health data synthesis, and presentation structure." data-hi="सोसाइटी ऑफ क्लिनिकल रिसर्च एंड मेडिकल प्रोफेशनल्स (SCRMP) द्वारा आयोजित &quot;फार्मासिस्ट: भारत के टीकाकरण अभियान के अग्रिम पंक्ति के चालक&quot; पर प्रतिस्पर्धी पोस्टर प्रस्तुति के लिए प्रथम पुरस्कार से सम्मानित।">
+              Awarded First Prize for competitive poster presentation on "Pharmacists: Frontline Drivers of India's Vaccination Movement" organized by the Society of Clinical Research and Medical Professionals (SCRMP). Recognized for clarity of scientific communication, public health data synthesis, and presentation structure.
+            </p>
+
+            <div class="hl-stage-footer">
+              <span class="hl-duration-pill"><i data-lucide="star"></i> First Prize Winner · National Competition</span>
+            </div>
           </div>
         </div>
 
         <!-- SLIDE 05: IIT INDORE -->
-        <div class="hl-slide" data-slide="4">
-          <div class="hl-image-frame">
-            <img src="./assets/iit_indore.jpg" alt="IIT Indore Workshop" class="hl-full-img"/>
+        <div class="hl-slide" data-slide="4" data-theme-color="purple">
+          <div class="hl-stage-visual">
+            <div class="hl-image-frame" data-img-src="./assets/iit_indore.jpg" data-img-caption="10-day GIAN Workshop on Precision Medicines at IIT Indore with Purdue University">
+              <img src="./assets/iit_indore.jpg" alt="IIT Indore Workshop" class="hl-full-img"/>
+              <button class="hl-zoom-pill" data-lightbox-trigger="./assets/iit_indore.jpg" data-caption="10-day GIAN Workshop on Precision Medicines & Next-Gen Deep Medicines at IIT Indore (In collaboration with Purdue University, USA)">
+                <i data-lucide="maximize-2"></i>
+                <span data-en="Inspect Photo" data-hi="फोटो देखें">Inspect Photo</span>
+              </button>
+            </div>
           </div>
-          <div class="hl-slide-caption">
-            <div class="hl-tag purple"><i data-lucide="sparkles"></i> IIT Indore · GIAN</div>
-            <h3 data-en="Precision Medicines Workshop" data-hi="प्रेसिजन मेडिसिन कार्यशाला">Precision Medicines Workshop</h3>
-            <p data-en="10-day intensive GIAN workshop in collaboration with Purdue University, USA on Next-Gen Deep Medicines at IIT Indore." data-hi="IIT इंदौर में नेक्स्ट-जेन डीप मेडिसिन पर पर्ड्यू यूनिवर्सिटी, यूएसए के सहयोग से 10-दिवसीय गहन जीआईएएन कार्यशाला।">10-day intensive GIAN workshop in collaboration with Purdue University, USA on Next-Gen Deep Medicines at IIT Indore.</p>
+          <div class="hl-stage-editorial">
+            <div class="hl-card-topbar">
+              <div class="hl-tag purple"><i data-lucide="sparkles"></i> <span data-en="IIT Indore · Purdue University GIAN" data-hi="आईआईटी इंदौर · पर्ड्यू यूनिवर्सिटी जीआईएएन">IIT Indore · Purdue University GIAN</span></div>
+              <span class="hl-slide-tag-year">2026</span>
+            </div>
+            <h3 class="hl-editorial-title" data-en="Precision Medicines & Next-Gen Deep Medicines" data-hi="प्रेसिजन मेडिसिन और अगली पीढ़ी की डीप मेडिसिन">Precision Medicines & Next-Gen Deep Medicines</h3>
+            
+            <div class="hl-meta-chips">
+              <span class="hl-chip"><i data-lucide="map-pin"></i> <strong>Host:</strong> IIT Indore</span>
+              <span class="hl-chip"><i data-lucide="globe"></i> <strong>Collaboration:</strong> Purdue University (USA)</span>
+              <span class="hl-chip"><i data-lucide="layers"></i> <strong>Framework:</strong> GIAN (10 Days)</span>
+            </div>
+
+            <p class="hl-editorial-desc" data-en="Completed an intensive 10-day Global Initiative of Academic Networks (GIAN) workshop at the Indian Institute of Technology Indore, conducted in partnership with faculty from Purdue University, USA. Covered deep medicine paradigms, precision targeted therapeutics, artificial intelligence in pharmacology, and advanced drug delivery systems." data-hi="भारतीय प्रौद्योगिकी संस्थान इंदौर में पर्ड्यू विश्वविद्यालय, यूएसए के संकाय के साथ साझेदारी में 10-दिवसीय वैश्विक शैक्षणिक नेटवर्क पहल (GIAN) कार्यशाला पूरी की। प्रेसिजन लक्षित चिकित्सा, फार्माकोलॉजी में एआई और उन्नत दवा वितरण प्रणालियों को कवर किया।">
+              Completed an intensive 10-day Global Initiative of Academic Networks (GIAN) workshop at the Indian Institute of Technology Indore, conducted in partnership with faculty from Purdue University, USA. Covered deep medicine paradigms, precision targeted therapeutics, artificial intelligence in pharmacology, and advanced drug delivery systems.
+            </p>
+
+            <div class="hl-stage-footer">
+              <span class="hl-duration-pill"><i data-lucide="graduation-cap"></i> Advanced International Coursework</span>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- PAGINATION DOTS & PLAYBACK STATUS -->
+    <!-- QUICK THUMBNAIL STRIP & PLAYBACK STATUS -->
     <div class="hl-pagination-bar">
-      <div class="hl-dots" id="hlDots"></div>
-      <span class="hl-autoplay-badge"><span class="pulse-dot"></span> Auto-Playing</span>
+      <div class="hl-thumb-strip" id="hlThumbStrip">
+        <button class="hl-thumb-btn active" data-jump-slide="0" aria-label="Jump to Slide 1">
+          <span class="hl-thumb-idx">01</span>
+          <span class="hl-thumb-label">NITW Mentorship</span>
+        </button>
+        <button class="hl-thumb-btn" data-jump-slide="1" aria-label="Jump to Slide 2">
+          <span class="hl-thumb-idx">02</span>
+          <span class="hl-thumb-label">NITW Campus</span>
+        </button>
+        <button class="hl-thumb-btn" data-jump-slide="2" aria-label="Jump to Slide 3">
+          <span class="hl-thumb-idx">03</span>
+          <span class="hl-thumb-label">IISc Summit</span>
+        </button>
+        <button class="hl-thumb-btn" data-jump-slide="3" aria-label="Jump to Slide 4">
+          <span class="hl-thumb-idx">04</span>
+          <span class="hl-thumb-label">Poster Award</span>
+        </button>
+        <button class="hl-thumb-btn" data-jump-slide="4" aria-label="Jump to Slide 5">
+          <span class="hl-thumb-idx">05</span>
+          <span class="hl-thumb-label">IIT Indore</span>
+        </button>
+      </div>
+      <div class="hl-status-pill">
+        <span class="pulse-dot"></span>
+        <span class="hl-status-text" data-en="Auto-Advancing (Hover to Pause)" data-hi="ऑटो-एडवांस (रोकने के लिए होवर करें)">Auto-Advancing (Hover to Pause)</span>
+      </div>
     </div>
   </div>
 </section>
@@ -322,269 +470,69 @@
   </div>
 </section>
 
-<!-- RESEARCH & INSIGHTS (BLOG SECTION) -->
-<section id="insights" class="section">
+<!-- SPECIALIZED PORTFOLIOS GATEWAY (LIGHTWEIGHT HOME PAGE PORTAL) -->
+<section class="section gateway-section alt-bg" id="portfolios-gateway">
   <div class="contain-lg">
-    <span class="label" data-en="Research Notes" data-hi="शोध नोट्स">Research Notes</span>
-    <h2 class="heading" data-en="Research & Insights" data-hi="शोध और विचार">Research & Insights</h2>
-    <p class="section-subtext" data-en="Notes from my journey across pharmacy, biomedical research, biophysics, and computational biology." data-hi="फार्मेसी, बायोमेडिकल शोध, बायोफिज़िक्स और कम्प्यूटेशनल बायोलॉजी की यात्रा से मेरे विचार।">Notes from my journey across pharmacy, biomedical research, biophysics, and computational biology.</p>
-
-    <!-- LARGE INTENTIONAL LONG-FORM CARDS STACKED VERTICALLY -->
-    <div class="insights-stack">
-      
-      <!-- ARTICLE CARD 01 -->
-      <article class="insight-card reveal" data-article-id="article-1">
-        <div class="insight-img-box">
-          <div class="insight-img-placeholder i1">
-            <span class="placeholder-tag">IIT (BHU) · Cancer Research</span>
-          </div>
-          <img src="./assets/article1_cancer_research.png" alt="My First Experience in Cancer Research" class="insight-card-img"/>
-        </div>
-        <div class="insight-card-body">
-          <div class="insight-meta-header">
-            <span class="insight-cat-badge">RESEARCH EXPERIENCE</span>
-            <span class="insight-num">01</span>
-          </div>
-          <h3 class="insight-title" data-en="My First Experience in Cancer Research" data-hi="कैंसर शोध में मेरा पहला अनुभव">My First Experience in Cancer Research</h3>
-          <p class="insight-excerpt" data-en="My first meaningful exposure to biomedical research came through work around miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer, introducing me to the complexity of translating a molecular idea into a potential therapeutic strategy." data-hi="बायोमेडिकल शोध में मेरा पहला सार्थक अनुभव ट्रिपल-नेगेटिव ब्रेस्ट कैंसर के लिए miRNA-नैनोकैरियर डिलीवरी के काम से मिला...">My first meaningful exposure to biomedical research came through work around miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer, introducing me to the complexity of translating a molecular idea into a potential therapeutic strategy.</p>
-          <div class="insight-card-footer">
-            <span class="insight-meta-tag">Research Experience</span>
-            <button class="insight-read-btn" data-article-id="article-1" data-en="Read Article →" data-hi="लेख पढ़ें →">Read Article →</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- ARTICLE CARD 02 -->
-      <article class="insight-card reveal" data-article-id="article-2">
-        <div class="insight-img-box">
-          <div class="insight-img-placeholder i2">
-            <span class="placeholder-tag">Computational Biology & AI/ML</span>
-          </div>
-          <img src="./assets/article2_computational_biology.png" alt="Why I'm Interested in Computational Biology" class="insight-card-img"/>
-        </div>
-        <div class="insight-card-body">
-          <div class="insight-meta-header">
-            <span class="insight-cat-badge">SCIENTIFIC PERSPECTIVE</span>
-            <span class="insight-num">02</span>
-          </div>
-          <h3 class="insight-title" data-en="Why I'm Interested in Computational Biology" data-hi="कम्प्यूटेशनल बायोलॉजी में मेरी रुचि क्यों है">Why I'm Interested in Computational Biology</h3>
-          <p class="insight-excerpt" data-en="How a Pharm.D background and early biomedical research exposure gradually led me toward computational biology, structural biology, bioinformatics, and AI/ML in biomedical research." data-hi="फार्म.डी पृष्ठभूमि और शुरुआती बायोमेडिकल शोध अनुभव ने मुझे कम्प्यूटेशनल बायोलॉजी, स्ट्रक्चरल बायोलॉजी और AI/ML की ओर कैसे प्रेरित किया...">How a Pharm.D background and early biomedical research exposure gradually led me toward computational biology, structural biology, bioinformatics, and AI/ML in biomedical research.</p>
-          <div class="insight-card-footer">
-            <span class="insight-meta-tag">Scientific Perspective</span>
-            <button class="insight-read-btn" data-article-id="article-2" data-en="Read Article →" data-hi="लेख पढ़ें →">Read Article →</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- ARTICLE CARD 03 -->
-      <article class="insight-card reveal" data-article-id="article-3">
-        <div class="insight-img-box">
-          <div class="insight-img-placeholder i3">
-            <span class="placeholder-tag">Academic Journey · Classroom to Lab</span>
-          </div>
-          <img src="./assets/article3_classroom_to_lab.jpg" alt="From a Pharm.D Classroom to a Research Laboratory" class="insight-card-img"/>
-        </div>
-        <div class="insight-card-body">
-          <div class="insight-meta-header">
-            <span class="insight-cat-badge">ACADEMIC JOURNEY</span>
-            <span class="insight-num">03</span>
-          </div>
-          <h3 class="insight-title" data-en="From a Pharm.D Classroom to a Research Laboratory" data-hi="फार्म.डी कक्षा से अनुसंधान प्रयोगशाला तक">From a Pharm.D Classroom to a Research Laboratory</h3>
-          <p class="insight-excerpt" data-en="How moving from classroom-based pharmaceutical education into research changed the way I think about scientific questions — and what that shift revealed about the nature of scientific knowledge." data-hi="कक्षा-आधारित दवा शिक्षा से शोध में जाने पर वैज्ञानिक प्रश्नों के बारे में मेरी सोच कैसे बदली...">How moving from classroom-based pharmaceutical education into research changed the way I think about scientific questions — and what that shift revealed about the nature of scientific knowledge.</p>
-          <div class="insight-card-footer">
-            <span class="insight-meta-tag">Academic Journey</span>
-            <button class="insight-read-btn" data-article-id="article-3" data-en="Read Article →" data-hi="लेख पढ़ें →">Read Article →</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- ARTICLE CARD 04 -->
-      <article class="insight-card reveal" data-article-id="article-4">
-        <div class="insight-img-box">
-          <div class="insight-img-placeholder i1" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
-            <span class="placeholder-tag">Biophysics & Computational Biology</span>
-          </div>
-          <img src="./assets/article4_biophysics.png" alt="Why I'm Moving Toward Biophysics and Computational Biology" class="insight-card-img"/>
-        </div>
-        <div class="insight-card-body">
-          <div class="insight-meta-header">
-            <span class="insight-cat-badge">FUTURE DIRECTION</span>
-            <span class="insight-num">04</span>
-          </div>
-          <h3 class="insight-title" data-en="Why I'm Moving Toward Biophysics and Computational Biology" data-hi="मैं बायोफिज़िक्स और कम्प्यूटेशनल बायोलॉजी की ओर क्यों बढ़ रहा हूँ">Why I'm Moving Toward Biophysics and Computational Biology</h3>
-          <p class="insight-excerpt" data-en="The questions I find most interesting increasingly sit at the intersection of biology, physics, and computation. Here is why I am building toward biophysics and computational biology as the next chapter of my research journey." data-hi="मुझे सबसे अधिक रुचि वाले प्रश्न जीव विज्ञान, भौतिकी और संगणना के चौराहे पर बैठते हैं...">The questions I find most interesting increasingly sit at the intersection of biology, physics, and computation. Here is why I am building toward biophysics and computational biology as the next chapter of my research journey.</p>
-          <div class="insight-card-footer">
-            <span class="insight-meta-tag">Future Direction</span>
-            <button class="insight-read-btn" data-article-id="article-4" data-en="Read Article →" data-hi="लेख पढ़ें →">Read Article →</button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- SCHOLARLY SERVICE & PROFESSIONAL MEMBERSHIPS -->
-<section id="memberships" class="section dark-bg">
-  <div class="contain-lg">
-    <span class="label lt" data-en="Scholarly Community & Service" data-hi="वैज्ञानिक समुदाय और सेवा">Scholarly Community & Service</span>
-    <h2 class="heading lt" data-en="Scholarly Service & Professional Memberships" data-hi="अकादमिक सेवा और पेशेवर सदस्यता">Scholarly Service & Professional Memberships</h2>
-    <p class="section-subtext lt" data-en="Invited scientific manuscript peer review in digital health alongside active engagement across international cancer research and biomarker societies." data-hi="डिजिटल स्वास्थ्य में आमंत्रित पांडुलिपि सहकर्मी समीक्षा के साथ-साथ अंतरराष्ट्रीय कैंसर अनुसंधान और बायोमार्कर समाजों में सक्रिय सहभागिता।">Invited scientific manuscript peer review in digital health alongside active engagement across international cancer research and biomarker societies.</p>
-    
-    <!-- EDITORIAL FEATURE: SCHOLARLY PEER REVIEW -->
-    <div class="scholarly-service-wrap">
-      <div class="scholarly-service-card">
-        <div class="service-card-header">
-          <div class="service-eyebrow-group">
-            <span class="service-eyebrow" data-en="PEER REVIEW & EDITORIAL SERVICE" data-hi="सहकर्मी समीक्षा और संपादकीय सेवा">PEER REVIEW & EDITORIAL SERVICE</span>
-            <span class="service-status-pill">
-              <span class="service-status-dot"></span>
-              <span data-en="Invited Peer Reviewer · Accepted" data-hi="आमंत्रित सहकर्मी समीक्षक · स्वीकृत">Invited Peer Reviewer · Accepted</span>
-            </span>
-          </div>
-          <div class="service-journal-badge" title="Journal of Medical Internet Research">
-            <span class="journal-abbr">JMIR</span>
-            <span class="journal-subtext">Q1 · Digital Health</span>
-          </div>
-        </div>
-
-        <div class="service-card-main">
-          <div class="service-title-block">
-            <h3 class="service-journal-title" data-en="Journal of Medical Internet Research (JMIR)" data-hi="जर्नल ऑफ मेडिकल इंटरनेट रिसर्च (JMIR)">Journal of Medical Internet Research (JMIR)</h3>
-            <p class="service-journal-meta">
-              <span class="meta-item"><strong>Publisher:</strong> JMIR Publications (Toronto, Canada)</span>
-              <span class="meta-sep">·</span>
-              <span class="meta-item"><strong>Scope:</strong> Digital Health, Medical Informatics & Healthcare Technology</span>
-              <span class="meta-sep">·</span>
-              <span class="meta-item"><strong>ISSN:</strong> 1438-8871</span>
-            </p>
-          </div>
-
-          <p class="service-narrative" data-en="Invited by the editorial board of the Journal of Medical Internet Research (JMIR) to conduct a scientific peer review of a research manuscript. The review responsibility entails rigorous, objective appraisal of research methodology, computational and clinical validity, scientific integrity, and clarity of findings within the scope of internet-enabled healthcare and medical informatics." data-hi="जर्नल ऑफ मेडिकल इंटरनेट रिसर्च (JMIR) के संपादकीय बोर्ड द्वारा एक शोध पांडुलिपि की वैज्ञानिक सहकर्मी समीक्षा करने के लिए आमंत्रित किया गया। इस समीक्षा जिम्मेदारी में इंटरनेट-सक्षम स्वास्थ्य सेवा और चिकित्सा सूचना विज्ञान के दायरे में शोध पद्धति, कम्प्यूटेशनल और नैदानिक वैधता, वैज्ञानिक अखंडता और निष्कर्षों की स्पष्टता का कठोर, वस्तुनिष्ठ मूल्यांकन शामिल है।">
-            Invited by the editorial board of the Journal of Medical Internet Research (JMIR) to conduct a scientific peer review of a research manuscript. The review responsibility entails rigorous, objective appraisal of research methodology, computational and clinical validity, scientific integrity, and clarity of findings within the scope of internet-enabled healthcare and medical informatics.
-          </p>
-
-          <!-- FOUNDATIONAL TRAINING INTEGRATION: ELSEVIER CERTIFIED PEER REVIEWER -->
-          <div class="service-foundation-box">
-            <div class="foundation-icon-col">
-              <i data-lucide="shield-check" class="foundation-icon"></i>
-            </div>
-            <div class="foundation-content">
-              <div class="foundation-header">
-                <span class="foundation-label" data-en="Methodological Foundation:" data-hi="पद्धतिगत आधार:">Methodological Foundation:</span>
-                <span class="foundation-title">Elsevier Certified Peer Reviewer</span>
-                <span class="foundation-org">(Elsevier Researcher Academy)</span>
-              </div>
-              <p class="foundation-text" data-en="Grounded in formal peer-review training covering structured manuscript analysis, ethical standards, conflict-of-interest evaluation, and constructive feedback protocols to ensure objective and rigorous scientific critique." data-hi="संरचित पांडुलिपि विश्लेषण, नैतिक मानकों, हितों के टकराव के मूल्यांकन और रचनात्मक प्रतिक्रिया प्रोटोकॉल को कवर करने वाले औपचारिक सहकर्मी समीक्षा प्रशिक्षण पर आधारित, ताकि निष्पक्ष और कठोर वैज्ञानिक समालोचना सुनिश्चित की जा सके।">
-                Grounded in formal peer-review training covering structured manuscript analysis, ethical standards, conflict-of-interest evaluation, and constructive feedback protocols to ensure objective and rigorous scientific critique.
-              </p>
-            </div>
-          </div>
-
-          <!-- KEY ATTRIBUTES ROW -->
-          <div class="service-meta-grid">
-            <div class="service-meta-cell">
-              <span class="cell-label" data-en="Role & Capacity" data-hi="भूमिका और दायित्व">Role & Capacity</span>
-              <span class="cell-val" data-en="Invited Manuscript Reviewer (Accepted)" data-hi="आमंत्रित पांडुलिपि समीक्षक (स्वीकृत)">Invited Manuscript Reviewer (Accepted)</span>
-            </div>
-            <div class="service-meta-cell">
-              <span class="cell-label" data-en="Focus Domain" data-hi="फोकस क्षेत्र">Focus Domain</span>
-              <span class="cell-val" data-en="Digital Health & Medical Informatics" data-hi="डिजिटल स्वास्थ्य और चिकित्सा सूचना विज्ञान">Digital Health & Medical Informatics</span>
-            </div>
-            <div class="service-meta-cell">
-              <span class="cell-label" data-en="Review Integrity" data-hi="समीक्षा अखंडता">Review Integrity</span>
-              <span class="cell-val" data-en="COPE Ethical Guidelines & Objective Appraisal" data-hi="COPE नैतिक दिशानिर्देश और वस्तुनिष्ठ मूल्यांकन">COPE Ethical Guidelines & Objective Appraisal</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <div class="gateway-header-wrap">
+      <span class="label" data-en="Specialized Portfolios" data-hi="विशेष पोर्टफोलियो">Specialized Portfolios</span>
+      <h2 class="heading" data-en="Scholarly Portfolios & Research Toolkits" data-hi="अकादमिक पोर्टफोलियो और शोध टूलकिट">Scholarly Portfolios & Research Toolkits</h2>
+      <p class="section-subtext" data-en="Explore dedicated full-screen editorial records for scholarly peer review, in-depth research essays, and computational toolkits." data-hi="अकादमिक सहकर्मी समीक्षा, गहन शोध निबंधों और कम्प्यूटेशनल टूलकिट के लिए समर्पित पूर्ण-स्क्रीन संपादकीय रिकॉर्ड देखें।">Explore dedicated full-screen editorial records for scholarly peer review, in-depth research essays, and computational toolkits.</p>
     </div>
 
-    <!-- SUBHEADING FOR SOCIETIES -->
-    <div class="memberships-subheading-wrap">
-      <span class="sub-label lt" data-en="Scientific Affiliations" data-hi="वैज्ञानिक संबद्धता">Scientific Affiliations</span>
-      <h3 class="memberships-subheading" data-en="International Scientific & Oncology Societies" data-hi="अंतरराष्ट्रीय वैज्ञानिक और ऑन्कोलॉजी समाज">International Scientific & Oncology Societies</h3>
-    </div>
-    
-    <div class="membership-grid">
-      
-      <!-- MEMBERSHIP 01: AACR -->
-      <div class="membership-card">
-        <div class="membership-badge-top">
-          <span class="m-status-pill gold"><i data-lucide="shield-check"></i> AACR Member</span>
+    <div class="gateway-grid">
+      <!-- GATEWAY CARD 1: AFFILIATIONS & SERVICE -->
+      <div class="gateway-card" data-open-subpage="memberships">
+        <div class="gateway-card-top">
+          <span class="gateway-badge gold"><i data-lucide="shield-check"></i> <span data-en="Scholarly Service" data-hi="अकादमिक सेवा">Scholarly Service</span></span>
+          <span class="gateway-arrow-pill" data-en="Open Full Screen ↗" data-hi="खोलें ↗">Open Full Screen ↗</span>
         </div>
-        <div class="membership-logo-box">
-          <img src="./assets/logo_aacr.png" alt="AACR Logo" class="membership-logo-img"/>
+        <h3 class="gateway-title" data-en="Affiliations & Scholarly Service" data-hi="संबद्धता और अकादमिक सेवा">Affiliations & Scholarly Service</h3>
+        <p class="gateway-desc" data-en="Invited Peer Reviewer for JMIR (Journal of Medical Internet Research), Elsevier Certified Peer Reviewer foundation, and student memberships across AACR, ASCO, ISOBM, and SOHO." data-hi="JMIR के लिए आमंत्रित सहकर्मी समीक्षक, एल्सेवियर प्रमाणित समीक्षक प्रशिक्षण, और AACR, ASCO, ISOBM, SOHO में सदस्यता।">
+          Invited Peer Reviewer for JMIR (Journal of Medical Internet Research), Elsevier Certified Peer Reviewer foundation, and student memberships across AACR, ASCO, ISOBM, and SOHO.
+        </p>
+        <div class="gateway-pills">
+          <span>JMIR Reviewer</span>
+          <span>Elsevier Certified</span>
+          <span>AACR · ASCO · ISOBM · SOHO</span>
         </div>
-        <div class="membership-body">
-          <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
-          <h3 class="membership-title" data-en="American Association for Cancer Research (AACR)" data-hi="अमेरिकन एसोसिएशन फॉर कैंसर रिसर्च (AACR)">American Association for Cancer Research (AACR)</h3>
-          <div class="membership-id-box">
-            <span class="id-label">AACR ID:</span>
-            <span class="id-value">2881450</span>
-          </div>
-          <p class="membership-desc" data-en="World's first and largest professional organization dedicated to advancing cancer research and pioneering scientific discoveries." data-hi="कैंसर अनुसंधान को आगे बढ़ाने और अग्रणी वैज्ञानिक खोजों के लिए समर्पित दुनिया का पहला और सबसे बड़ा पेशेवर संगठन।">World's first and largest professional organization dedicated to advancing cancer research and pioneering scientific discoveries.</p>
-        </div>
+        <button class="gateway-action-btn" data-open-subpage="memberships" data-en="Explore Affiliations & Service →" data-hi="संबद्धता और सेवा देखें →">Explore Affiliations & Service →</button>
       </div>
 
-      <!-- MEMBERSHIP 02: ASCO -->
-      <div class="membership-card">
-        <div class="membership-badge-top">
-          <span class="m-status-pill blue"><i data-lucide="award"></i> Global Society</span>
+      <!-- GATEWAY CARD 2: RESEARCH INSIGHTS -->
+      <div class="gateway-card" data-open-subpage="insights">
+        <div class="gateway-card-top">
+          <span class="gateway-badge blue"><i data-lucide="book-open"></i> <span data-en="Research Notes" data-hi="शोध विचार">Research Notes</span></span>
+          <span class="gateway-arrow-pill" data-en="Open Full Screen ↗" data-hi="खोलें ↗">Open Full Screen ↗</span>
         </div>
-        <div class="membership-logo-box">
-          <img src="./assets/logo_asco.png" alt="ASCO Logo" class="membership-logo-img"/>
+        <h3 class="gateway-title" data-en="Research Insights & Perspectives" data-hi="शोध विचार और दृष्टिकोण">Research Insights & Perspectives</h3>
+        <p class="gateway-desc" data-en="4 curated long-form essays covering cancer biology at IIT (BHU), computational biology rationale, moving from classroom to research laboratory, and the emerging biophysics trajectory." data-hi="आईआईटी (बीएचयू) में कैंसर जीव विज्ञान, कम्प्यूटेशनल जीव विज्ञान, कक्षा से अनुसंधान प्रयोगशाला में जाने और उभरती बायोफिज़िक्स दिशा पर 4 निबंध।">
+          4 curated long-form essays covering cancer biology at IIT (BHU), computational biology rationale, moving from classroom to research laboratory, and the emerging biophysics trajectory.
+        </p>
+        <div class="gateway-pills">
+          <span>4 Long-form Essays</span>
+          <span>Cancer Biology</span>
+          <span>Biophysics Direction</span>
         </div>
-        <div class="membership-body">
-          <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
-          <h3 class="membership-title" data-en="American Society of Clinical Oncology (ASCO)" data-hi="अमेरिकन सोसाइटी ऑफ क्लिनिकल ऑन्कोलॉजी (ASCO)">American Society of Clinical Oncology (ASCO)</h3>
-          <div class="membership-id-box">
-            <span class="id-label">Status:</span>
-            <span class="id-value">Student Member</span>
-          </div>
-          <p class="membership-desc" data-en="Premier global oncology organization uniting cancer physicians, researchers, and healthcare professionals to transform oncology care." data-hi="ऑन्कोलॉजी देखभाल को बदलने के लिए कैंसर डॉक्टरों, शोधकर्ताओं और स्वास्थ्य सेवा पेशेवरों को एकजुट करने वाला प्रमुख वैश्विक संगठन।">Premier global oncology organization uniting cancer physicians, researchers, and healthcare professionals to transform oncology care.</p>
-        </div>
+        <button class="gateway-action-btn" data-open-subpage="insights" data-en="Read Research Notes →" data-hi="शोध विचार पढ़ें →">Read Research Notes →</button>
       </div>
 
-      <!-- MEMBERSHIP 03: ISOBM -->
-      <div class="membership-card">
-        <div class="membership-badge-top">
-          <span class="m-status-pill teal"><i data-lucide="dna"></i> Biomarkers & Research</span>
+      <!-- GATEWAY CARD 3: TECHNICAL & LINGUISTIC TOOLKIT -->
+      <div class="gateway-card" data-open-subpage="skills">
+        <div class="gateway-card-top">
+          <span class="gateway-badge teal"><i data-lucide="cpu"></i> <span data-en="Technical Toolkit" data-hi="तकनीकी कौशल">Technical Toolkit</span></span>
+          <span class="gateway-arrow-pill" data-en="Open Full Screen ↗" data-hi="खोलें ↗">Open Full Screen ↗</span>
         </div>
-        <div class="membership-logo-box">
-          <img src="./assets/logo_isobm.webp" alt="ISOBM Logo" class="membership-logo-img"/>
+        <h3 class="gateway-title" data-en="Technical & Linguistic Skills" data-hi="तकनीकी और भाषाई कौशल">Technical & Linguistic Skills</h3>
+        <p class="gateway-desc" data-en="Computational biology stack (Python, Streamlit, Machine Learning, SQL), statistical data analysis, and multilingual proficiency in English, Hindi, and German (A1 CEFR)." data-hi="कम्प्यूटेशनल बायोलॉजी स्टैक (पायथन, स्ट्रीमलिट, मशीन लर्निंग, एसक्यूएल), सांख्यिकीय डेटा विश्लेषण, और अंग्रेजी, हिंदी व जर्मन (A1) में बहुभाषी दक्षता।">
+          Computational biology stack (Python, Streamlit, Machine Learning, SQL), statistical data analysis, and multilingual proficiency in English, Hindi, and German (A1 CEFR).
+        </p>
+        <div class="gateway-pills">
+          <span>Python & Streamlit</span>
+          <span>ML & Statistics</span>
+          <span>English · Hindi · German</span>
         </div>
-        <div class="membership-body">
-          <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
-          <h3 class="membership-title" data-en="International Society of Oncology and Biomarkers (ISOBM)" data-hi="इंटरनेशनल सोसाइटी ऑफ ऑन्कोलॉजी एंड बायोमार्क्स (ISOBM)">International Society of Oncology and Biomarkers (ISOBM)</h3>
-          <div class="membership-id-box">
-            <span class="id-label">Status:</span>
-            <span class="id-value">Student Member</span>
-          </div>
-          <p class="membership-desc" data-en="Global scientific network dedicated to the study of tumor markers, molecular diagnostics, and translational cancer biology." data-hi="ट्यूमर मार्करों, आणविक निदान और अनुवाद संबंधी कैंसर जीव विज्ञान के अध्ययन के लिए समर्पित वैश्विक वैज्ञानिक नेटवर्क।">Global scientific network dedicated to the study of tumor markers, molecular diagnostics, and translational cancer biology.</p>
-        </div>
+        <button class="gateway-action-btn" data-open-subpage="skills" data-en="View Full Toolkit →" data-hi="पूर्ण टूलकिट देखें →">View Full Toolkit →</button>
       </div>
-
-      <!-- MEMBERSHIP 04: SOHO -->
-      <div class="membership-card">
-        <div class="membership-badge-top">
-          <span class="m-status-pill purple"><i data-lucide="globe-2"></i> India Chapter</span>
-        </div>
-        <div class="membership-logo-box">
-          <img src="./assets/logo_soho.png" alt="SOHO Logo" class="membership-logo-img"/>
-        </div>
-        <div class="membership-body">
-          <span class="membership-role" data-en="Member · India Chapter" data-hi="सदस्य · भारत अध्याय">Member · India Chapter</span>
-          <h3 class="membership-title" data-en="Society of Hematologic Oncology (SOHO)" data-hi="सोसाइटी ऑफ हेमेटोलॉजिक ऑन्कोलॉजी (SOHO)">Society of Hematologic Oncology (SOHO)</h3>
-          <div class="membership-id-box">
-            <span class="id-label">Chapter:</span>
-            <span class="id-value">Member (India Chapter)</span>
-          </div>
-          <p class="membership-desc" data-en="Worldwide society devoted to promoting education, research, and clinical advancement in hematologic malignancies." data-hi="हेमेटोलॉजिक दुर्दमताओं में शिक्षा, अनुसंधान और नैदानिक उन्नति को बढ़ावा देने के लिए समर्पित विश्वव्यापी समाज।">Worldwide society devoted to promoting education, research, and clinical advancement in hematologic malignancies.</p>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -706,65 +654,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section dark-bg">
-  <div class="contain">
-    <span class="label lt" data-en="Toolkit" data-hi="टूलकिट">Toolkit</span>
-    <h2 class="heading lt" data-en="Technical & Linguistic Skills" data-hi="तकनीकी और भाषाई कौशल">Technical & Linguistic Skills</h2>
-    <div class="toolkit-grid">
-      <!-- Programming & Data Card -->
-      <div class="toolkit-card">
-        <div class="toolkit-header">
-          <i data-lucide="code-2" class="toolkit-icon"></i>
-          <div>
-            <h3 data-en="Programming & Data Tools" data-hi="प्रोग्रामिंग और डेटा उपकरण">Programming & Data Tools</h3>
-            <span class="toolkit-sub" data-en="Foundational / Basic Knowledge" data-hi="बुनियादी ज्ञान">Foundational / Basic Knowledge</span>
-          </div>
-        </div>
-        <div class="skill-tags">
-          <span class="skill-chip"><i data-lucide="terminal"></i> Python (Basics)</span>
-          <span class="skill-chip"><i data-lucide="layout"></i> Streamlit</span>
-          <span class="skill-chip"><i data-lucide="brain"></i> Machine Learning (Intro)</span>
-          <span class="skill-chip"><i data-lucide="bar-chart-2"></i> Statistics</span>
-          <span class="skill-chip"><i data-lucide="database"></i> SQL (Basics)</span>
-          <span class="skill-chip"><i data-lucide="file-code"></i> Java (Basics)</span>
-        </div>
-      </div>
-
-      <!-- Languages Card -->
-      <div class="toolkit-card">
-        <div class="toolkit-header">
-          <i data-lucide="languages" class="toolkit-icon"></i>
-          <h3 data-en="Languages & Proficiency" data-hi="भाषाएँ और दक्षता">Languages & Proficiency</h3>
-        </div>
-        <div class="lang-list">
-          <div class="lg-item">
-            <div class="lg-left">
-              <span class="lg-name">English</span>
-              <span class="lg-native">English</span>
-            </div>
-            <span class="lg-level" data-en="Academic / Professional" data-hi="अकादमिक / पेशेवर">Academic / Professional</span>
-          </div>
-          <div class="lg-item">
-            <div class="lg-left">
-              <span class="lg-name">Hindi</span>
-              <span class="lg-native">हिन्दी</span>
-            </div>
-            <span class="lg-level" data-en="Working Proficiency" data-hi="कार्यसाधक दक्षता">Working Proficiency</span>
-          </div>
-          <div class="lg-item">
-            <div class="lg-left">
-              <span class="lg-name">German</span>
-              <span class="lg-native">Deutsch</span>
-            </div>
-            <span class="lg-level" data-en="Elementary (A1 — CEFR)" data-hi="प्राथमिक (A1 — CEFR)">Elementary (A1 — CEFR)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="section alt-bg">
   <div class="contain">
@@ -882,6 +771,441 @@
     </div>
   </div>
 </footer>
+
+<!-- ================================================================= -->
+<!-- FULL-SCREEN SUBPAGE 01: AFFILIATIONS & SCHOLARLY SERVICE -->
+<!-- ================================================================= -->
+<div id="subpage-memberships" class="fullscreen-subpage" aria-hidden="true" role="dialog" aria-label="Affiliations & Scholarly Service">
+  <div class="subpage-topbar">
+    <button class="subpage-back-btn" data-close-subpage aria-label="Back to portfolio home">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span data-en="Back to Home" data-hi="होम पर वापस">Back to Home</span>
+    </button>
+    <div class="subpage-breadcrumb">
+      <span class="crumb-root" data-en="Portfolio" data-hi="पोर्टफोलियो">Portfolio</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current" data-en="Affiliations & Service" data-hi="संबद्धता और सेवा">Affiliations & Service</span>
+    </div>
+    <button class="subpage-close-icon" data-close-subpage aria-label="Close page">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="subpage-scroll-body">
+    <div class="subpage-inner contain-lg">
+      <div class="subpage-hero-banner">
+        <span class="label lt" data-en="Scholarly Community & Service" data-hi="वैज्ञानिक समुदाय और सेवा">Scholarly Community & Service</span>
+        <h1 class="subpage-main-heading" data-en="Scholarly Service & Professional Memberships" data-hi="अकादमिक सेवा और पेशेवर सदस्यता">Scholarly Service & Professional Memberships</h1>
+        <p class="section-subtext lt" data-en="Invited scientific manuscript peer review in digital health alongside active engagement across international cancer research and biomarker societies." data-hi="डिजिटल स्वास्थ्य में आमंत्रित पांडुलिपि सहकर्मी समीक्षा के साथ-साथ अंतरराष्ट्रीय कैंसर अनुसंधान और बायोमार्कर समाजों में सक्रिय सहभागिता।">Invited scientific manuscript peer review in digital health alongside active engagement across international cancer research and biomarker societies.</p>
+      </div>
+      
+      <!-- EDITORIAL FEATURE: SCHOLARLY PEER REVIEW -->
+      <div class="scholarly-service-wrap">
+        <div class="scholarly-service-card">
+          <div class="service-card-header">
+            <div class="service-eyebrow-group">
+              <span class="service-eyebrow" data-en="PEER REVIEW & EDITORIAL SERVICE" data-hi="सहकर्मी समीक्षा और संपादकीय सेवा">PEER REVIEW & EDITORIAL SERVICE</span>
+              <span class="service-status-pill">
+                <span class="service-status-dot"></span>
+                <span data-en="Invited Peer Reviewer · Accepted" data-hi="आमंत्रित सहकर्मी समीक्षक · स्वीकृत">Invited Peer Reviewer · Accepted</span>
+              </span>
+            </div>
+            <div class="service-journal-badge" title="Journal of Medical Internet Research">
+              <span class="journal-abbr">JMIR</span>
+              <span class="journal-subtext">Q1 · Digital Health</span>
+            </div>
+          </div>
+
+          <div class="service-card-main">
+            <div class="service-title-block">
+              <h2 class="service-journal-title" data-en="Journal of Medical Internet Research (JMIR)" data-hi="जर्नल ऑफ मेडिकल इंटरनेट रिसर्च (JMIR)">Journal of Medical Internet Research (JMIR)</h2>
+              <p class="service-journal-meta">
+                <span class="meta-item"><strong>Publisher:</strong> JMIR Publications (Toronto, Canada)</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-item"><strong>Scope:</strong> Digital Health, Medical Informatics & Healthcare Technology</span>
+                <span class="meta-sep">·</span>
+                <span class="meta-item"><strong>ISSN:</strong> 1438-8871</span>
+              </p>
+            </div>
+
+            <p class="service-narrative" data-en="Invited by the editorial board of the Journal of Medical Internet Research (JMIR) to conduct a scientific peer review of a research manuscript. The review responsibility entails rigorous, objective appraisal of research methodology, computational and clinical validity, scientific integrity, and clarity of findings within the scope of internet-enabled healthcare and medical informatics." data-hi="जर्नल ऑफ मेडिकल इंटरनेट रिसर्च (JMIR) के संपादकीय बोर्ड द्वारा एक शोध पांडुलिपि की वैज्ञानिक सहकर्मी समीक्षा करने के लिए आमंत्रित किया गया। इस समीक्षा जिम्मेदारी में इंटरनेट-सक्षम स्वास्थ्य सेवा और चिकित्सा सूचना विज्ञान के दायरे में शोध पद्धति, कम्प्यूटेशनल और नैदानिक वैधता, वैज्ञानिक अखंडता और निष्कर्षों की स्पष्टता का कठोर, वस्तुनिष्ठ मूल्यांकन शामिल है।">
+              Invited by the editorial board of the Journal of Medical Internet Research (JMIR) to conduct a scientific peer review of a research manuscript. The review responsibility entails rigorous, objective appraisal of research methodology, computational and clinical validity, scientific integrity, and clarity of findings within the scope of internet-enabled healthcare and medical informatics.
+            </p>
+
+            <!-- FOUNDATIONAL TRAINING INTEGRATION: ELSEVIER CERTIFIED PEER REVIEWER -->
+            <div class="service-foundation-box">
+              <div class="foundation-icon-col">
+                <i data-lucide="shield-check" class="foundation-icon"></i>
+              </div>
+              <div class="foundation-content">
+                <div class="foundation-header">
+                  <span class="foundation-label" data-en="Methodological Foundation:" data-hi="पद्धतिगत आधार:">Methodological Foundation:</span>
+                  <span class="foundation-title">Elsevier Certified Peer Reviewer</span>
+                  <span class="foundation-org">(Elsevier Researcher Academy)</span>
+                </div>
+                <p class="foundation-text" data-en="Grounded in formal peer-review training covering structured manuscript analysis, ethical standards, conflict-of-interest evaluation, and constructive feedback protocols to ensure objective and rigorous scientific critique." data-hi="संरचित पांडुलिपि विश्लेषण, नैतिक मानकों, हितों के टकराव के मूल्यांकन और रचनात्मक प्रतिक्रिया प्रोटोकॉल को कवर करने वाले औपचारिक सहकर्मी समीक्षा प्रशिक्षण पर आधारित, ताकि निष्पक्ष और कठोर वैज्ञानिक समालोचना सुनिश्चित की जा सके।">
+                  Grounded in formal peer-review training covering structured manuscript analysis, ethical standards, conflict-of-interest evaluation, and constructive feedback protocols to ensure objective and rigorous scientific critique.
+                </p>
+              </div>
+            </div>
+
+            <!-- KEY ATTRIBUTES ROW -->
+            <div class="service-meta-grid">
+              <div class="service-meta-cell">
+                <span class="cell-label" data-en="Role & Capacity" data-hi="भूमिका और दायित्व">Role & Capacity</span>
+                <span class="cell-val" data-en="Invited Manuscript Reviewer (Accepted)" data-hi="आमंत्रित पांडुलिपि समीक्षक (स्वीकृत)">Invited Manuscript Reviewer (Accepted)</span>
+              </div>
+              <div class="service-meta-cell">
+                <span class="cell-label" data-en="Focus Domain" data-hi="फोकस क्षेत्र">Focus Domain</span>
+                <span class="cell-val" data-en="Digital Health & Medical Informatics" data-hi="डिजिटल स्वास्थ्य और चिकित्सा सूचना विज्ञान">Digital Health & Medical Informatics</span>
+              </div>
+              <div class="service-meta-cell">
+                <span class="cell-label" data-en="Review Integrity" data-hi="समीक्षा अखंडता">Review Integrity</span>
+                <span class="cell-val" data-en="COPE Ethical Guidelines & Objective Appraisal" data-hi="COPE नैतिक दिशानिर्देश और वस्तुनिष्ठ मूल्यांकन">COPE Ethical Guidelines & Objective Appraisal</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBHEADING FOR SOCIETIES -->
+      <div class="memberships-subheading-wrap">
+        <span class="sub-label lt" data-en="Scientific Affiliations" data-hi="वैज्ञानिक संबद्धता">Scientific Affiliations</span>
+        <h3 class="memberships-subheading" data-en="International Scientific & Oncology Societies" data-hi="अंतरराष्ट्रीय वैज्ञानिक और ऑन्कोलॉजी समाज">International Scientific & Oncology Societies</h3>
+      </div>
+      
+      <div class="membership-grid">
+        
+        <!-- MEMBERSHIP 01: AACR -->
+        <div class="membership-card">
+          <div class="membership-badge-top">
+            <span class="m-status-pill gold"><i data-lucide="shield-check"></i> AACR Member</span>
+          </div>
+          <div class="membership-logo-box">
+            <img src="./assets/logo_aacr.png" alt="AACR Logo" class="membership-logo-img"/>
+          </div>
+          <div class="membership-body">
+            <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
+            <h3 class="membership-title" data-en="American Association for Cancer Research (AACR)" data-hi="अमेरिकन एसोसिएशन फॉर कैंसर रिसर्च (AACR)">American Association for Cancer Research (AACR)</h3>
+            <div class="membership-id-box">
+              <span class="id-label">AACR ID:</span>
+              <span class="id-value">2881450</span>
+            </div>
+            <p class="membership-desc" data-en="World's first and largest professional organization dedicated to advancing cancer research and pioneering scientific discoveries." data-hi="कैंसर अनुसंधान को आगे बढ़ाने और अग्रणी वैज्ञानिक खोजों के लिए समर्पित दुनिया का पहला और सबसे बड़ा पेशेवर संगठन।">World's first and largest professional organization dedicated to advancing cancer research and pioneering scientific discoveries.</p>
+          </div>
+        </div>
+
+        <!-- MEMBERSHIP 02: ASCO -->
+        <div class="membership-card">
+          <div class="membership-badge-top">
+            <span class="m-status-pill blue"><i data-lucide="award"></i> Global Society</span>
+          </div>
+          <div class="membership-logo-box">
+            <img src="./assets/logo_asco.png" alt="ASCO Logo" class="membership-logo-img"/>
+          </div>
+          <div class="membership-body">
+            <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
+            <h3 class="membership-title" data-en="American Society of Clinical Oncology (ASCO)" data-hi="अमेरिकन सोसाइटी ऑफ क्लिनिकल ऑन्कोलॉजी (ASCO)">American Society of Clinical Oncology (ASCO)</h3>
+            <div class="membership-id-box">
+              <span class="id-label">Status:</span>
+              <span class="id-value">Student Member</span>
+            </div>
+            <p class="membership-desc" data-en="Premier global oncology organization uniting cancer physicians, researchers, and healthcare professionals to transform oncology care." data-hi="ऑन्कोलॉजी देखभाल को बदलने के लिए कैंसर डॉक्टरों, शोधकर्ताओं और स्वास्थ्य सेवा पेशेवरों को एकजुट करने वाला प्रमुख वैश्विक संगठन।">Premier global oncology organization uniting cancer physicians, researchers, and healthcare professionals to transform oncology care.</p>
+          </div>
+        </div>
+
+        <!-- MEMBERSHIP 03: ISOBM -->
+        <div class="membership-card">
+          <div class="membership-badge-top">
+            <span class="m-status-pill teal"><i data-lucide="dna"></i> Biomarkers & Research</span>
+          </div>
+          <div class="membership-logo-box">
+            <img src="./assets/logo_isobm.webp" alt="ISOBM Logo" class="membership-logo-img"/>
+          </div>
+          <div class="membership-body">
+            <span class="membership-role" data-en="Student Member" data-hi="छात्र सदस्य">Student Member</span>
+            <h3 class="membership-title" data-en="International Society of Oncology and Biomarkers (ISOBM)" data-hi="इंटरनेशनल सोसाइटी ऑफ ऑन्कोलॉजी एंड बायोमार्क्स (ISOBM)">International Society of Oncology and Biomarkers (ISOBM)</h3>
+            <div class="membership-id-box">
+              <span class="id-label">Status:</span>
+              <span class="id-value">Student Member</span>
+            </div>
+            <p class="membership-desc" data-en="Global scientific network dedicated to the study of tumor markers, molecular diagnostics, and translational cancer biology." data-hi="ट्यूमर मार्करों, आणविक निदान और अनुवाद संबंधी कैंसर जीव विज्ञान के अध्ययन के लिए समर्पित वैश्विक वैज्ञानिक नेटवर्क।">Global scientific network dedicated to the study of tumor markers, molecular diagnostics, and translational cancer biology.</p>
+          </div>
+        </div>
+
+        <!-- MEMBERSHIP 04: SOHO -->
+        <div class="membership-card">
+          <div class="membership-badge-top">
+            <span class="m-status-pill purple"><i data-lucide="globe-2"></i> India Chapter</span>
+          </div>
+          <div class="membership-logo-box">
+            <img src="./assets/logo_soho.png" alt="SOHO Logo" class="membership-logo-img"/>
+          </div>
+          <div class="membership-body">
+            <span class="membership-role" data-en="Member · India Chapter" data-hi="सदस्य · भारत अध्याय">Member · India Chapter</span>
+            <h3 class="membership-title" data-en="Society of Hematologic Oncology (SOHO)" data-hi="सोसाइटी ऑफ हेमेटोलॉजिक ऑन्कोलॉजी (SOHO)">Society of Hematologic Oncology (SOHO)</h3>
+            <div class="membership-id-box">
+              <span class="id-label">Chapter:</span>
+              <span class="id-value">Member (India Chapter)</span>
+            </div>
+            <p class="membership-desc" data-en="Worldwide society devoted to promoting education, research, and clinical advancement in hematologic malignancies." data-hi="हेमेटोलॉजिक दुर्दमताओं में शिक्षा, अनुसंधान और नैदानिक उन्नति को बढ़ावा देने के लिए समर्पित विश्वव्यापी समाज।">Worldwide society devoted to promoting education, research, and clinical advancement in hematologic malignancies.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RETURN TO HOME BUTTON AT BOTTOM -->
+      <div class="subpage-bottom-nav">
+        <button class="subpage-bottom-return-btn" data-close-subpage>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="Return to Main Portfolio" data-hi="मुख्य पोर्टफोलियो पर वापस जाएं">Return to Main Portfolio</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- FULL-SCREEN SUBPAGE 02: RESEARCH NOTES & INSIGHTS -->
+<!-- ================================================================= -->
+<div id="subpage-insights" class="fullscreen-subpage" aria-hidden="true" role="dialog" aria-label="Research Notes & Insights">
+  <div class="subpage-topbar">
+    <button class="subpage-back-btn" data-close-subpage aria-label="Back to portfolio home">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span data-en="Back to Home" data-hi="होम पर वापस">Back to Home</span>
+    </button>
+    <div class="subpage-breadcrumb">
+      <span class="crumb-root" data-en="Portfolio" data-hi="पोर्टफोलियो">Portfolio</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current" data-en="Research Notes" data-hi="शोध विचार">Research Notes</span>
+    </div>
+    <button class="subpage-close-icon" data-close-subpage aria-label="Close page">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="subpage-scroll-body">
+    <div class="subpage-inner contain-lg">
+      <div class="subpage-hero-banner">
+        <span class="label" data-en="Research Notes & Perspectives" data-hi="शोध नोट्स और दृष्टिकोण">Research Notes & Perspectives</span>
+        <h1 class="subpage-main-heading" data-en="Research Notes & Insights" data-hi="शोध और विचार">Research & Insights</h1>
+        <p class="section-subtext" data-en="Long-form reflections from my journey across pharmacy, biomedical research, biophysics, and computational biology." data-hi="फार्मेसी, बायोमेडिकल शोध, बायोफिज़िक्स और कम्प्यूटेशनल बायोलॉजी की यात्रा से मेरे विस्तृत विचार।">Long-form reflections from my journey across pharmacy, biomedical research, biophysics, and computational biology.</p>
+      </div>
+
+      <!-- LARGE INTENTIONAL LONG-FORM CARDS STACKED VERTICALLY -->
+      <div class="insights-stack">
+        
+        <!-- ARTICLE CARD 01 -->
+        <article class="insight-card reveal" data-article-id="article-1">
+          <div class="insight-img-box">
+            <div class="insight-img-placeholder i1">
+              <span class="placeholder-tag">IIT (BHU) · Cancer Research</span>
+            </div>
+            <img src="./assets/article1_cancer_research.png" alt="My First Experience in Cancer Research" class="insight-card-img"/>
+          </div>
+          <div class="insight-card-body">
+            <div class="insight-meta-header">
+              <span class="insight-cat-badge">RESEARCH EXPERIENCE</span>
+              <span class="insight-num">01</span>
+            </div>
+            <h3 class="insight-title" data-en="My First Experience in Cancer Research" data-hi="कैंसर शोध में मेरा पहला अनुभव">My First Experience in Cancer Research</h3>
+            <p class="insight-excerpt" data-en="My first meaningful exposure to biomedical research came through work around miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer, introducing me to the complexity of translating a molecular idea into a potential therapeutic strategy." data-hi="बायोमेडिकल शोध में मेरा पहला सार्थक अनुभव ट्रिपल-नेगेटिव ब्रेस्ट कैंसर के लिए miRNA-नैनोकैरियर डिलीवरी के काम से मिला...">My first meaningful exposure to biomedical research came through work around miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer, introducing me to the complexity of translating a molecular idea into a potential therapeutic strategy.</p>
+            <div class="insight-card-footer">
+              <span class="insight-meta-tag">Research Experience</span>
+              <button class="insight-read-btn" data-article-id="article-1" data-en="Read Full Essay →" data-hi="पूरा निबंध पढ़ें →">Read Full Essay →</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 02 -->
+        <article class="insight-card reveal" data-article-id="article-2">
+          <div class="insight-img-box">
+            <div class="insight-img-placeholder i2">
+              <span class="placeholder-tag">Computational Biology & AI/ML</span>
+            </div>
+            <img src="./assets/article2_computational_biology.png" alt="Why I'm Interested in Computational Biology" class="insight-card-img"/>
+          </div>
+          <div class="insight-card-body">
+            <div class="insight-meta-header">
+              <span class="insight-cat-badge">SCIENTIFIC PERSPECTIVE</span>
+              <span class="insight-num">02</span>
+            </div>
+            <h3 class="insight-title" data-en="Why I'm Interested in Computational Biology" data-hi="कम्प्यूटेशनल बायोलॉजी में मेरी रुचि क्यों है">Why I'm Interested in Computational Biology</h3>
+            <p class="insight-excerpt" data-en="How a Pharm.D background and early biomedical research exposure gradually led me toward computational biology, structural biology, bioinformatics, and AI/ML in biomedical research." data-hi="फार्म.डी पृष्ठभूमि और शुरुआती बायोमेडिकल शोध अनुभव ने मुझे कम्प्यूटेशनल बायोलॉजी, स्ट्रक्चरल बायोलॉजी और AI/ML की ओर कैसे प्रेरित किया...">How a Pharm.D background and early biomedical research exposure gradually led me toward computational biology, structural biology, bioinformatics, and AI/ML in biomedical research.</p>
+            <div class="insight-card-footer">
+              <span class="insight-meta-tag">Scientific Perspective</span>
+              <button class="insight-read-btn" data-article-id="article-2" data-en="Read Full Essay →" data-hi="पूरा निबंध पढ़ें →">Read Full Essay →</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 03 -->
+        <article class="insight-card reveal" data-article-id="article-3">
+          <div class="insight-img-box">
+            <div class="insight-img-placeholder i3">
+              <span class="placeholder-tag">Academic Journey · Classroom to Lab</span>
+            </div>
+            <img src="./assets/article3_classroom_to_lab.jpg" alt="From a Pharm.D Classroom to a Research Laboratory" class="insight-card-img"/>
+          </div>
+          <div class="insight-card-body">
+            <div class="insight-meta-header">
+              <span class="insight-cat-badge">ACADEMIC JOURNEY</span>
+              <span class="insight-num">03</span>
+            </div>
+            <h3 class="insight-title" data-en="From a Pharm.D Classroom to a Research Laboratory" data-hi="फार्म.डी कक्षा से अनुसंधान प्रयोगशाला तक">From a Pharm.D Classroom to a Research Laboratory</h3>
+            <p class="insight-excerpt" data-en="How moving from classroom-based pharmaceutical education into research changed the way I think about scientific questions — and what that shift revealed about the nature of scientific knowledge." data-hi="कक्षा-आधारित दवा शिक्षा से शोध में जाने पर वैज्ञानिक प्रश्नों के बारे में मेरी सोच कैसे बदली...">How moving from classroom-based pharmaceutical education into research changed the way I think about scientific questions — and what that shift revealed about the nature of scientific knowledge.</p>
+            <div class="insight-card-footer">
+              <span class="insight-meta-tag">Academic Journey</span>
+              <button class="insight-read-btn" data-article-id="article-3" data-en="Read Full Essay →" data-hi="पूरा निबंध पढ़ें →">Read Full Essay →</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ARTICLE CARD 04 -->
+        <article class="insight-card reveal" data-article-id="article-4">
+          <div class="insight-img-box">
+            <div class="insight-img-placeholder i1" style="background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);">
+              <span class="placeholder-tag">Biophysics & Computational Biology</span>
+            </div>
+            <img src="./assets/article4_biophysics.png" alt="Why I'm Moving Toward Biophysics and Computational Biology" class="insight-card-img"/>
+          </div>
+          <div class="insight-card-body">
+            <div class="insight-meta-header">
+              <span class="insight-cat-badge">FUTURE DIRECTION</span>
+              <span class="insight-num">04</span>
+            </div>
+            <h3 class="insight-title" data-en="Why I'm Moving Toward Biophysics and Computational Biology" data-hi="मैं बायोफिज़िक्स और कम्प्यूटेशनल बायोलॉजी की ओर क्यों बढ़ रहा हूँ">Why I'm Moving Toward Biophysics and Computational Biology</h3>
+            <p class="insight-excerpt" data-en="The questions I find most interesting increasingly sit at the intersection of biology, physics, and computation. Here is why I am building toward biophysics and computational biology as the next chapter of my research journey." data-hi="मुझे सबसे अधिक रुचि वाले प्रश्न जीव विज्ञान, भौतिकी और संगणना के चौराहे पर बैठते हैं...">The questions I find most interesting increasingly sit at the intersection of biology, physics, and computation. Here is why I am building toward biophysics and computational biology as the next chapter of my research journey.</p>
+            <div class="insight-card-footer">
+              <span class="insight-meta-tag">Future Direction</span>
+              <button class="insight-read-btn" data-article-id="article-4" data-en="Read Full Essay →" data-hi="पूरा निबंध पढ़ें →">Read Full Essay →</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- RETURN TO HOME BUTTON AT BOTTOM -->
+      <div class="subpage-bottom-nav">
+        <button class="subpage-bottom-return-btn" data-close-subpage>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="Return to Main Portfolio" data-hi="मुख्य पोर्टफोलियो पर वापस जाएं">Return to Main Portfolio</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- FULL-SCREEN SUBPAGE 03: TECHNICAL & LINGUISTIC SKILLS -->
+<!-- ================================================================= -->
+<div id="subpage-skills" class="fullscreen-subpage" aria-hidden="true" role="dialog" aria-label="Technical & Linguistic Skills">
+  <div class="subpage-topbar">
+    <button class="subpage-back-btn" data-close-subpage aria-label="Back to portfolio home">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span data-en="Back to Home" data-hi="होम पर वापस">Back to Home</span>
+    </button>
+    <div class="subpage-breadcrumb">
+      <span class="crumb-root" data-en="Portfolio" data-hi="पोर्टफोलियो">Portfolio</span>
+      <span class="crumb-sep">/</span>
+      <span class="crumb-current" data-en="Technical Toolkit" data-hi="तकनीकी कौशल">Technical Toolkit</span>
+    </div>
+    <button class="subpage-close-icon" data-close-subpage aria-label="Close page">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="subpage-scroll-body">
+    <div class="subpage-inner contain-lg">
+      <div class="subpage-hero-banner">
+        <span class="label lt" data-en="Technical & Analytical Suite" data-hi="तकनीकी और विश्लेषणात्मक सूट">Technical & Analytical Suite</span>
+        <h1 class="subpage-main-heading" data-en="Technical & Linguistic Skills" data-hi="तकनीकी और भाषाई कौशल">Technical & Linguistic Skills</h1>
+        <p class="section-subtext lt" data-en="Methodological computational toolkit, data analysis frameworks, molecular biophysics interests, and linguistic proficiencies." data-hi="कम्प्यूटेशनल टूलकिट, डेटा विश्लेषण रूपरेखा, आणविक बायोफिज़िक्स और भाषाई दक्षता।">Methodological computational toolkit, data analysis frameworks, molecular biophysics interests, and linguistic proficiencies.</p>
+      </div>
+
+      <div class="toolkit-grid">
+        <!-- Programming & Data Card -->
+        <div class="toolkit-card">
+          <div class="toolkit-header">
+            <i data-lucide="code-2" class="toolkit-icon"></i>
+            <div>
+              <h3 data-en="Programming & Data Tools" data-hi="प्रोग्रामिंग और डेटा उपकरण">Programming & Data Tools</h3>
+              <span class="toolkit-sub" data-en="Foundational / Working Knowledge" data-hi="बुनियादी / कार्यसाधक ज्ञान">Foundational / Working Knowledge</span>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-chip"><i data-lucide="terminal"></i> Python (Data & Analysis)</span>
+            <span class="skill-chip"><i data-lucide="layout"></i> Streamlit (Web App Dev)</span>
+            <span class="skill-chip"><i data-lucide="brain"></i> Machine Learning (Applied)</span>
+            <span class="skill-chip"><i data-lucide="bar-chart-2"></i> Statistical Analysis</span>
+            <span class="skill-chip"><i data-lucide="database"></i> SQL (Relational Queries)</span>
+            <span class="skill-chip"><i data-lucide="file-code"></i> Java (Foundational)</span>
+          </div>
+        </div>
+
+        <!-- Languages Card -->
+        <div class="toolkit-card">
+          <div class="toolkit-header">
+            <i data-lucide="languages" class="toolkit-icon"></i>
+            <div>
+              <h3 data-en="Languages & Proficiency" data-hi="भाषाएँ और दक्षता">Languages & Proficiency</h3>
+              <span class="toolkit-sub" data-en="Communication & Scientific Translation" data-hi="संचार और वैज्ञानिक अनुवाद">Communication & Scientific Translation</span>
+            </div>
+          </div>
+          <div class="lang-list">
+            <div class="lg-item">
+              <div class="lg-left">
+                <span class="lg-name">English</span>
+                <span class="lg-native">English</span>
+              </div>
+              <span class="lg-level" data-en="Academic / Professional" data-hi="अकादमिक / पेशेवर">Academic / Professional</span>
+            </div>
+            <div class="lg-item">
+              <div class="lg-left">
+                <span class="lg-name">Hindi</span>
+                <span class="lg-native">हिन्दी</span>
+              </div>
+              <span class="lg-level" data-en="Working Proficiency" data-hi="कार्यसाधक दक्षता">Working Proficiency</span>
+            </div>
+            <div class="lg-item">
+              <div class="lg-left">
+                <span class="lg-name">German</span>
+                <span class="lg-native">Deutsch</span>
+              </div>
+              <span class="lg-level" data-en="Elementary (A1 — CEFR)" data-hi="प्राथमिक (A1 — CEFR)">Elementary (A1 — CEFR)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RETURN TO HOME BUTTON AT BOTTOM -->
+      <div class="subpage-bottom-nav">
+        <button class="subpage-bottom-return-btn" data-close-subpage>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span data-en="Return to Main Portfolio" data-hi="मुख्य पोर्टफोलियो पर वापस जाएं">Return to Main Portfolio</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================= -->
+<!-- HIGHLIGHTS IMAGE LIGHTBOX MODAL -->
+<!-- ================================================================= -->
+<div id="hlLightboxModal" class="hl-lightbox-modal" aria-hidden="true" role="dialog" aria-label="Expanded Image View">
+  <div class="hl-lightbox-backdrop" id="hlLightboxBackdrop"></div>
+  <div class="hl-lightbox-box">
+    <button class="hl-lightbox-close" id="hlLightboxClose" aria-label="Close Lightbox">&times;</button>
+    <div class="hl-lightbox-img-wrap">
+      <img src="" alt="Enlarged Highlight View" class="hl-lightbox-img" id="hlLightboxImg" />
+    </div>
+    <div class="hl-lightbox-caption" id="hlLightboxCaption"></div>
+  </div>
+</div>
 
 <!-- ARTICLE READING MODAL WINDOW (75% VIEWPORT) -->
 <div class="article-modal-overlay" id="articleModal" aria-hidden="true">

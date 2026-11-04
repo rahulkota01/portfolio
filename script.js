@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-en][data-hi]').forEach(el => {
       const text = el.getAttribute(currentLang === 'en' ? 'data-en' : 'data-hi');
       if (text) {
-        if (el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H2' || el.tagName === 'H3') {
+        if (el.tagName === 'A' || el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'BUTTON') {
           el.innerHTML = text;
         } else {
           el.textContent = text;
@@ -118,89 +118,292 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── HIGHLIGHTS SINGLE-CARD UNCROPPED CAROUSEL SHOWCASE ──
+  // ── FULL-SCREEN SUBPAGE SYSTEM ("IN-PAGE BOOK VIEW") ──
+  const subpages = {
+    memberships: document.getElementById('subpage-memberships'),
+    insights: document.getElementById('subpage-insights'),
+    skills: document.getElementById('subpage-skills')
+  };
+
+  let activeSubpageId = null;
+
+  const openSubpage = (subpageId, pushState = true) => {
+    const targetSubpage = subpages[subpageId];
+    if (!targetSubpage) return;
+
+    // Close any currently active subpage
+    if (activeSubpageId && subpages[activeSubpageId]) {
+      subpages[activeSubpageId].classList.remove('active');
+      subpages[activeSubpageId].setAttribute('aria-hidden', 'true');
+    }
+
+    activeSubpageId = subpageId;
+    targetSubpage.classList.add('active');
+    targetSubpage.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    // Reset scroll to top
+    const scrollBody = targetSubpage.querySelector('.subpage-scroll-body');
+    if (scrollBody) scrollBody.scrollTop = 0;
+
+    // Ensure all reveal elements inside subpage are instantly visible
+    targetSubpage.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+    // Refresh icons inside subpage if needed
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+
+    if (pushState) {
+      history.pushState({ subpage: subpageId }, '', `#${subpageId}`);
+    }
+  };
+
+  const closeSubpage = (popState = false) => {
+    if (!activeSubpageId) return;
+
+    const currentSubpage = subpages[activeSubpageId];
+    if (currentSubpage) {
+      currentSubpage.classList.remove('active');
+      currentSubpage.setAttribute('aria-hidden', 'true');
+    }
+
+    activeSubpageId = null;
+    document.body.style.overflow = '';
+
+    if (!popState && window.location.hash) {
+      history.pushState(null, '', window.location.pathname);
+    }
+  };
+
+  // Nav pills & Mobile drawer clicks
+  document.querySelectorAll('.subpage-nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const subpage = link.getAttribute('data-subpage');
+      if (subpage) {
+        openSubpage(subpage);
+        if (typeof closeDrawer === 'function') closeDrawer();
+      }
+    });
+  });
+
+  // Gateway cards & buttons on home page
+  document.querySelectorAll('[data-open-subpage]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const subpage = el.getAttribute('data-open-subpage');
+      if (subpage) openSubpage(subpage);
+    });
+  });
+
+  // Back buttons and close icons inside subpages
+  document.querySelectorAll('[data-close-subpage]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeSubpage();
+    });
+  });
+
+  // Handle browser back / forward buttons (popstate)
+  window.addEventListener('popstate', (e) => {
+    const hash = window.location.hash.replace('#', '');
+    if (subpages[hash]) {
+      openSubpage(hash, false);
+    } else {
+      closeSubpage(true);
+    }
+  });
+
+  // Check initial URL hash on page load
+  const initialHash = window.location.hash.replace('#', '');
+  if (subpages[initialHash]) {
+    openSubpage(initialHash, false);
+  }
+
+  // ── GOATED LEVEL HIGHLIGHTS SHOWCASE (90% COVERAGE & AMBIENT AURA) ──
   const hlSlides = document.querySelectorAll('.hl-slide');
   const hlSlidesTrack = document.getElementById('hlSlidesTrack');
   const hlPrevBtn = document.getElementById('hlPrevBtn');
   const hlNextBtn = document.getElementById('hlNextBtn');
-  const hlDotsContainer = document.getElementById('hlDots');
+  const hlCurrentNum = document.getElementById('hlCurrentNum');
+  const hlAmbientGlow = document.getElementById('hlAmbientGlow');
+  const hlThumbBtns = document.querySelectorAll('.hl-thumb-btn');
+  const hlProgressFill = document.getElementById('hlProgressFill');
   const hlShowcaseContainer = document.getElementById('hlShowcaseContainer');
 
   let currentHlSlide = 0;
-  let hlTimer = null;
+  let progressInterval = null;
+  let progressVal = 0;
+  const SLIDE_DURATION = 3500; // 3.5s per slide
+
+  const auraMap = ['gold', 'blue', 'teal', 'amber', 'purple'];
+
+  const updateSlideUI = (index) => {
+    currentHlSlide = (index + hlSlides.length) % hlSlides.length;
+
+    // Track movement
+    if (hlSlidesTrack) {
+      hlSlidesTrack.style.transform = `translateX(-${currentHlSlide * 100}%)`;
+    }
+
+    // Active number counter
+    if (hlCurrentNum) {
+      hlCurrentNum.textContent = String(currentHlSlide + 1).padStart(2, '0');
+    }
+
+    // Dynamic ambient aura
+    if (hlAmbientGlow) {
+      const aura = hlSlides[currentHlSlide]?.getAttribute('data-theme-color') || auraMap[currentHlSlide] || 'gold';
+      hlAmbientGlow.setAttribute('data-aura', aura);
+    }
+
+    // Thumbnail strip active state
+    hlThumbBtns.forEach((btn, idx) => {
+      btn.classList.toggle('active', idx === currentHlSlide);
+    });
+
+    // Reset progress fill
+    progressVal = 0;
+    if (hlProgressFill) hlProgressFill.style.width = '0%';
+  };
+
+  const nextHlSlide = () => updateSlideUI(currentHlSlide + 1);
+  const prevHlSlide = () => updateSlideUI(currentHlSlide - 1);
+
+  if (hlNextBtn) {
+    hlNextBtn.addEventListener('click', () => {
+      nextHlSlide();
+      resetHlTimer();
+    });
+  }
+
+  if (hlPrevBtn) {
+    hlPrevBtn.addEventListener('click', () => {
+      prevHlSlide();
+      resetHlTimer();
+    });
+  }
+
+  // Thumbnail buttons click
+  hlThumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const slideIdx = parseInt(btn.getAttribute('data-jump-slide'), 10);
+      if (!isNaN(slideIdx)) {
+        updateSlideUI(slideIdx);
+        resetHlTimer();
+      }
+    });
+  });
+
+  // Smooth Hairline Progress Bar & Auto-play Timer
+  const startHlTimer = () => {
+    stopHlTimer();
+    const stepMs = 50;
+    const stepIncrement = (stepMs / SLIDE_DURATION) * 100;
+
+    progressInterval = setInterval(() => {
+      progressVal += stepIncrement;
+      if (hlProgressFill) {
+        hlProgressFill.style.width = `${Math.min(progressVal, 100)}%`;
+      }
+      if (progressVal >= 100) {
+        nextHlSlide();
+        progressVal = 0;
+      }
+    }, stepMs);
+  };
+
+  const stopHlTimer = () => {
+    if (progressInterval) {
+      clearInterval(progressInterval);
+      progressInterval = null;
+    }
+  };
+
+  const resetHlTimer = () => {
+    stopHlTimer();
+    progressVal = 0;
+    if (hlProgressFill) hlProgressFill.style.width = '0%';
+    startHlTimer();
+  };
 
   if (hlSlides.length > 0 && hlSlidesTrack) {
-    // Build pagination dots dynamically
-    if (hlDotsContainer) {
-      hlDotsContainer.innerHTML = '';
-      hlSlides.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.className = `hl-dot ${idx === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Go to slide ${idx + 1}`);
-        dot.addEventListener('click', () => {
-          goToHlSlide(idx);
-          resetHlTimer();
-        });
-        hlDotsContainer.appendChild(dot);
-      });
-    }
-
-    const goToHlSlide = (index) => {
-      const dots = hlDotsContainer ? hlDotsContainer.querySelectorAll('.hl-dot') : [];
-      if (dots[currentHlSlide]) dots[currentHlSlide].classList.remove('active');
-
-      currentHlSlide = (index + hlSlides.length) % hlSlides.length;
-
-      hlSlidesTrack.style.transform = `translateX(-${currentHlSlide * 100}%)`;
-      if (dots[currentHlSlide]) dots[currentHlSlide].classList.add('active');
-    };
-
-    const nextHlSlide = () => goToHlSlide(currentHlSlide + 1);
-    const prevHlSlide = () => goToHlSlide(currentHlSlide - 1);
-
-    if (hlNextBtn) {
-      hlNextBtn.addEventListener('click', () => {
-        nextHlSlide();
-        resetHlTimer();
-      });
-    }
-
-    if (hlPrevBtn) {
-      hlPrevBtn.addEventListener('click', () => {
-        prevHlSlide();
-        resetHlTimer();
-      });
-    }
-
-    // Auto-play Timer (3.12s snappy interval - reduced by 80ms)
-    const startHlTimer = () => {
-      if (!hlTimer) {
-        hlTimer = setInterval(nextHlSlide, 3120);
-      }
-    };
-
-    const stopHlTimer = () => {
-      if (hlTimer) {
-        clearInterval(hlTimer);
-        hlTimer = null;
-      }
-    };
-
-    const resetHlTimer = () => {
-      stopHlTimer();
-      startHlTimer();
-    };
-
+    updateSlideUI(0);
     startHlTimer();
 
-    // Pause auto-scroll on hover/touch
+    // Pause on hover or touch
     if (hlShowcaseContainer) {
       hlShowcaseContainer.addEventListener('mouseenter', stopHlTimer);
       hlShowcaseContainer.addEventListener('mouseleave', startHlTimer);
       hlShowcaseContainer.addEventListener('touchstart', stopHlTimer, { passive: true });
       hlShowcaseContainer.addEventListener('touchend', startHlTimer, { passive: true });
     }
+
+    // Keyboard navigation (left/right arrow keys)
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+      if (e.key === 'ArrowRight') {
+        nextHlSlide();
+        resetHlTimer();
+      } else if (e.key === 'ArrowLeft') {
+        prevHlSlide();
+        resetHlTimer();
+      }
+    });
   }
+
+  // ── HIGHLIGHTS LIGHTBOX MODAL ──
+  const hlLightboxModal = document.getElementById('hlLightboxModal');
+  const hlLightboxImg = document.getElementById('hlLightboxImg');
+  const hlLightboxCaption = document.getElementById('hlLightboxCaption');
+  const hlLightboxClose = document.getElementById('hlLightboxClose');
+  const hlLightboxBackdrop = document.getElementById('hlLightboxBackdrop');
+
+  const openLightbox = (src, caption) => {
+    if (!hlLightboxModal || !hlLightboxImg) return;
+    hlLightboxImg.src = src;
+    if (hlLightboxCaption) hlLightboxCaption.textContent = caption || '';
+    hlLightboxModal.classList.add('active');
+    hlLightboxModal.setAttribute('aria-hidden', 'false');
+    stopHlTimer();
+  };
+
+  const closeLightbox = () => {
+    if (!hlLightboxModal) return;
+    hlLightboxModal.classList.remove('active');
+    hlLightboxModal.setAttribute('aria-hidden', 'true');
+    startHlTimer();
+  };
+
+  if (hlLightboxClose) hlLightboxClose.addEventListener('click', closeLightbox);
+  if (hlLightboxBackdrop) hlLightboxBackdrop.addEventListener('click', closeLightbox);
+
+  document.querySelectorAll('[data-lightbox-trigger]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const src = btn.getAttribute('data-lightbox-trigger');
+      const caption = btn.getAttribute('data-caption');
+      openLightbox(src, caption);
+    });
+  });
+
+  document.querySelectorAll('.hl-full-img').forEach(img => {
+    img.addEventListener('click', () => {
+      const src = img.getAttribute('src');
+      const caption = img.getAttribute('alt');
+      openLightbox(src, caption);
+    });
+  });
+
+  // Global Escape key handler for subpages and lightbox
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (activeSubpageId) closeSubpage();
+      if (hlLightboxModal && hlLightboxModal.classList.contains('active')) {
+        closeLightbox();
+      }
+    }
+  });
 
   // ── REAL-TIME LEGITIMATE VISITOR TRACKER (DAILY MIDNIGHT RESET & GLOBAL TOTAL) ──
   const visitorTotalEl = document.getElementById('visitorCount');
