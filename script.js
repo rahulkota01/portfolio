@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── DARK / LIGHT TOGGLE ──
   const themeBtn = document.getElementById('themeToggle');
-  const saved = localStorage.getItem('theme');
-  if (saved) html.setAttribute('data-theme', saved);
+  const saved = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
 
   themeBtn.addEventListener('click', () => {
-    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    const currentTheme = html.getAttribute('data-theme') || 'light';
+    const next = currentTheme === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
   });
