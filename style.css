@@ -1250,6 +1250,94 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
   gap: 2.5rem;
 }
 
+.toolkit-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.toolkit-card.full-width {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .toolkit-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scholarly-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.95rem;
+}
+
+.scholarly-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .scholarly-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.scholarly-item:hover {
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateY(-2px);
+}
+
+.scholarly-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.scholarly-title {
+  font-family: var(--f);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--txt);
+}
+
+[data-theme="dark"] .scholarly-title {
+  color: #ffffff;
+}
+
+.scholarly-desc {
+  font-size: 0.8rem;
+  color: var(--txt2);
+  line-height: 1.45;
+}
+
+[data-theme="dark"] .scholarly-desc {
+  color: #94a3b8;
+}
+
+.scholarly-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .scholarly-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
 .toolkit-card {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -3037,12 +3125,12 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 }
 
 .subpage-hero-banner {
-  margin-bottom: 3rem;
+  margin-bottom: 2.8rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
 }
 
 [data-theme="dark"] .subpage-hero-banner {
@@ -3050,30 +3138,34 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 }
 
 .subpage-hero-banner .label {
-  margin: 0 !important;
+  margin: 0 0 0.25rem 0 !important;
   color: var(--blue) !important;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  display: inline-block !important;
 }
 
 [data-theme="dark"] .subpage-hero-banner .label {
   color: var(--gold) !important;
 }
 
-.subpage-main-heading {
+.subpage-main-heading,
+.subpage-hero-banner .subpage-main-heading {
   font-family: var(--fs);
   font-size: 2.35rem;
   font-weight: 800;
   color: var(--txt) !important;
-  margin: 0 !important;
+  margin: 0 0 0.5rem 0 !important;
   padding: 0 !important;
   line-height: 1.25 !important;
   letter-spacing: -0.02em;
+  display: block !important;
 }
 
-[data-theme="dark"] .subpage-main-heading {
+[data-theme="dark"] .subpage-main-heading,
+[data-theme="dark"] .subpage-hero-banner .subpage-main-heading {
   color: #ffffff !important;
 }
 
@@ -3081,12 +3173,13 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
 .subpage-hero-banner p.section-subtext {
   font-size: 1.05rem !important;
   color: var(--txt2) !important;
-  max-width: 760px !important;
+  max-width: 780px !important;
   margin: 0 !important;
   padding: 0 !important;
   line-height: 1.65 !important;
   position: static !important;
   transform: none !important;
+  display: block !important;
 }
 
 [data-theme="dark"] .subpage-hero-banner .section-subtext,

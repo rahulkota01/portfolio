@@ -608,224 +608,131 @@ document.addEventListener('DOMContentLoaded', () => {
   const ARTICLES = {
     'article-1': {
       category: 'RESEARCH EXPERIENCE',
-      title: 'My First Experience in Cancer Research',
+      title: 'My First Exposure to Cancer Research: Understanding the Biology Behind TNBC',
       tag: 'IIT (BHU) · Cancer Research',
       imgSrc: './assets/article1_cancer_research.png',
       content: `
         <div class="article-body-text">
-          <p>My first meaningful exposure to biomedical research came through my work around <strong>miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer (TNBC)</strong> at IIT (BHU).</p>
-          <p>Coming from a Pharm.D background, I was familiar with cancer from the perspective of pharmacology, therapeutics, and patient care. Research introduced me to a different way of looking at the same disease: not only asking which treatment can be used, but asking <strong>why a treatment may work, what prevents it from working, and how we can design better approaches</strong>.</p>
+          <p>My first meaningful exposure to biomedical research came through exploratory literature-based work around <strong>miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer (TNBC)</strong> under the generous guidance of a PhD scholar at the Indian Institute of Technology (BHU) Varanasi.</p>
+          <p>Coming from a Pharm.D background, I was initially trained to evaluate cancer through the lens of pharmacology, clinical guidelines, and chemotherapy dosing regimens. However, this guided mentorship introduced me to an entirely different dimension of the disease: not merely asking what therapy to administer, but investigating <strong>why cancer cells behave aggressively, how molecular dysregulation drives malignancy, and how therapeutic resistance arises</strong>.</p>
           
-          <h3>Understanding the problem</h3>
-          <p>Triple-Negative Breast Cancer is a particularly challenging subtype because it lacks three commonly targeted receptors—estrogen receptor, progesterone receptor, and HER2. This limits the availability of some established targeted treatment strategies and makes the search for alternative therapeutic approaches particularly important.</p>
-          <p>My work brought me to the intersection of cancer biology, molecular regulation, and drug delivery.</p>
-          <p>One of the concepts I explored was <strong>microRNA, or miRNA</strong>. These small non-coding RNA molecules can regulate gene expression and influence important cellular processes. Because abnormal gene regulation is closely associated with cancer biology, miRNAs have attracted considerable interest as potential therapeutic tools and biomarkers.</p>
-          <p>But identifying a promising molecule is only one part of developing a therapy.</p>
-          <p>The next question is much harder:</p>
-          <p><strong>How do we actually deliver it to the right cells in a stable and effective way?</strong></p>
+          <h3>Encountering the Complexity of TNBC</h3>
+          <p>Triple-Negative Breast Cancer is notoriously aggressive because it lacks expression of estrogen receptors (ER), progesterone receptors (PR), and human epidermal growth factor receptor 2 (HER2). Without these molecular targets, standard endocrine and anti-HER2 therapies are ineffective, leaving cytotoxic chemotherapy as the primary systemic option and highlighting the severe clinical need for mechanism-targeted approaches.</p>
+          <p>This challenge brought me directly to the intersection of cancer genetics, post-transcriptional regulation, and targeted drug delivery.</p>
+          <p>During this guided exploratory work, I focused on <strong>microRNAs (miRNAs)</strong>—short, non-coding RNA molecules that modulate post-transcriptional gene expression. In normal physiology, miRNAs maintain delicate cellular homeostasis. In cancer, their dysregulation can act as a catalyst for oncogenesis, repressing tumour-suppressor genes or unleashing downstream oncogenic signaling cascades such as PI3K/Akt/mTOR and MAPK/ERK.</p>
 
-          <h3>Why nanocarriers?</h3>
-          <p>This is where nanocarrier-based delivery becomes interesting.</p>
-          <p>Therapeutic RNA molecules can face significant challenges, including instability, degradation, inefficient cellular uptake, and difficulty reaching the intended biological target. Nanocarriers are being investigated as a way to help address some of these delivery barriers.</p>
-          <p>Exploring the literature around miRNA-incorporated nanocarriers made me appreciate how interdisciplinary biomedical research can become.</p>
-          <p>A single therapeutic idea can involve:</p>
-          <p><strong>molecular biology → cancer biology → nanotechnology → drug delivery → pharmacology → therapeutic evaluation.</strong></p>
-          <p>That was one of the most valuable things I took away from the experience.</p>
-
-          <h3>What research changed for me</h3>
-          <p>Before experiencing research, I often thought of scientific knowledge as something that already existed and needed to be learned.</p>
-          <p>Research showed me the other side.</p>
-          <p>There are questions for which the answer is not yet known. There are approaches that appear promising but still have limitations. There are conflicting findings in the literature. And even an attractive therapeutic concept can encounter major challenges before it becomes clinically useful.</p>
-          <p>That changed the way I read scientific literature.</p>
-          <p>Instead of simply asking, <em>"What does this paper say?"</em>, I began to think about questions such as:</p>
+          <h3>From Molecular Target to Delivery Challenge</h3>
+          <p>Examining the literature on miRNA restoration or inhibition quickly revealed the dual nature of therapeutic development. Identifying a candidate miRNA that influences oncogenic pathways is a vital first step, but the biological barriers within the human body are formidable:</p>
           <ul>
-            <li><strong>What problem is this study actually trying to solve?</strong></li>
-            <li><strong>Why was this approach chosen?</strong></li>
-            <li><strong>What are its limitations?</strong></li>
-            <li><strong>What would need to happen before an idea like this could become a practical therapy?</strong></li>
+            <li>Unmodified naked RNAs suffer rapid enzymatic degradation by circulating ribonucleases (RNases).</li>
+            <li>Their negative charge and molecular size impede efficient cellular membrane translocation.</li>
+            <li>Systemic clearance by the reticuloendothelial system reduces tumour accumulation.</li>
           </ul>
-          <p>Those questions made research feel much more real to me.</p>
+          <p>This is where exploring nanocarrier platforms—including lipid nanoparticles and polymeric nanostructures—deepened my appreciation for translational cancer biology. I examined how carrier engineering, encapsulation efficiency, and surface functionalisation must navigate physiological barriers to reach malignant tissue.</p>
 
-          <h3>Beyond the first project</h3>
-          <p>My exposure to cancer research also made me realize that I am drawn toward problems that cannot be confined to a single discipline.</p>
-          <p>A question about cancer can quickly lead into molecular biology. A question about a molecular target can lead into structural biology. A therapeutic strategy can lead into drug delivery, computation, or materials science.</p>
-          <p>That interdisciplinary nature is one of the reasons my interests have gradually expanded toward <strong>computational biology, structural biology, bioinformatics, and AI/ML approaches in biomedical research</strong>.</p>
-          <p>My first research experience did not give me all the answers.</p>
-          <p>It gave me something more useful:</p>
-          <p><strong>better questions to ask.</strong></p>
-          <p>And that, for me, was the beginning of my journey toward becoming a researcher.</p>
+          <h3>A Critical Realisation: Biology Must Lead</h3>
+          <p>It is important to emphasize that this was literature-based exploratory research and guided academic mentorship rather than independent wet-lab experimental investigation. Yet, it profoundly reshaped how I approach scientific inquiry.</p>
+          <p>I realized that designing a nanocarrier or evaluating an in silico model is secondary to truly understanding the <strong>underlying biological mechanism</strong>. Why does a specific pathway become dysregulated in certain tumour subtypes? How does the cellular microenvironment influence uptake and resistance? Why do tumour cells adapt so rapidly to molecular interventions?</p>
+          <p>These mechanistic questions solidified my conviction that my long-term future belongs in molecular oncology and cancer cell biology.</p>
+          
+          <h3>Looking Forward</h3>
+          <p>This experience did not give me all the answers. Instead, it introduced me to a much larger scientific question: <strong>how do molecular changes alter the behaviour of cancer cells, and how can we investigate those changes experimentally?</strong></p>
         </div>
       `
     },
     'article-2': {
       category: 'SCIENTIFIC PERSPECTIVE',
-      title: "Why I'm Interested in Computational Biology",
-      tag: 'Computational Biology & AI/ML',
+      title: 'From Computational Curiosity to Cancer Biology: Understanding What I Actually Want to Investigate',
+      tag: 'Scientific Perspective · Research Direction',
       imgSrc: './assets/article2_computational_biology.png',
       content: `
         <div class="article-body-text">
-          <p>I am currently pursuing a Pharm.D, so at first glance, <strong>computational biology</strong> may seem like a direction quite different from my academic background.</p>
-          <p>For me, however, the connection became clearer through research.</p>
-          <p>Pharmacy introduced me to medicines, disease mechanisms, pharmacology, therapeutics, and the relationship between a drug and the patient. My research exposure then took me closer to molecular questions—particularly through work related to cancer biology, miRNA, and nanocarrier-based drug delivery.</p>
-          <p>The more I explored these areas, the more I became interested in what happens underneath the biological and therapeutic picture.</p>
-          <p>That is where computational biology began to attract me.</p>
+          <p>For a significant period during my early research exploration, I became deeply fascinated by <strong>computational biology, structural biology, bioinformatics, and AI/ML tools</strong>.</p>
+          <p>To an undergraduate student with limited immediate access to a dedicated molecular biology wet lab, computational tools offered an exhilarating gateway. With Python, R, open-source bioinformatics packages, and public genomic repositories such as GEO and TCGA, I could analyze gene expression, examine protein-ligand interactions, and explore molecular networks directly from my laptop.</p>
+          <p>These tools felt empowering, elegant, and intellectually satisfying. They allowed me to construct my own Streamlit application for clinical dosages, re-analyze public TNBC microarray datasets, and map complex miRNA–mRNA regulatory networks.</p>
 
-          <h3>From medicines to molecules</h3>
-          <p>A drug is not simply a molecule that "treats" a disease.</p>
-          <p>Its effects depend on interactions with biological systems: proteins, nucleic acids, cells, pathways, tissues, and eventually the patient.</p>
-          <p>Understanding these systems can require enormous amounts of information.</p>
-          <p>Biological data can come from genomic sequences, molecular structures, gene expression, protein interactions, clinical observations, and many other sources.</p>
-          <p>Trying to understand all of this information manually is not realistic.</p>
-          <p>Computation provides another way to approach these problems.</p>
-
-          <h3>More than AI</h3>
-          <p>My interest in computational biology is not simply an interest in artificial intelligence.</p>
-          <p>AI and machine learning are powerful tools, but <strong>computational biology is much broader than AI</strong>.</p>
-          <p>It involves using computational and mathematical approaches to investigate biological questions.</p>
-          <p>That can include areas such as:</p>
+          <h3>The Turning Point: When Predictions Demand Biological Reality</h3>
+          <p>However, as I spent more time working through computational pipelines and examining public datasets, a deeper realization took hold.</p>
+          <p>An algorithm can cluster thousands of genes. A docking script can output binding energy scores. A network visualization can link hundreds of nodes. But <strong>in silico models and computational predictions are only ever as good as our biological understanding of the disease itself</strong>.</p>
+          <p>Every time I generated a list of predicted hub genes or pathway interactions, my mind did not dwell on the mathematical matrix or the code efficiency. My curiosity kept returning insistently to the living biological reality behind the numbers:</p>
           <ul>
-            <li>Bioinformatics</li>
-            <li>Structural biology</li>
-            <li>Molecular modelling</li>
-            <li>Computational drug discovery</li>
-            <li>Biological data analysis</li>
-            <li>Systems biology</li>
-            <li>Machine learning for biological problems</li>
+            <li><strong>Why do cancer cells metastasise?</strong> What physical and biochemical signals prompt a sedentary epithelial cell to undergo epithelial-to-mesenchymal transition (EMT) and colonize distant organs?</li>
+            <li><strong>What genetic alterations truly drive progression?</strong> Which mutations are drivers versus passengers, and how do they remodel cellular pathways?</li>
+            <li><strong>How do cancer cells remodel their local microenvironment?</strong> How do stromal cells, immune infiltration, and extracellular matrix stiffness dictate aggressive phenotypes?</li>
+            <li><strong>Why do tumours develop resistance?</strong> How do cancer cell populations evolve under therapeutic pressure to evade targeted therapies?</li>
           </ul>
-          <p>What interests me most is the possibility of using these approaches to understand biological systems at a deeper level.</p>
 
-          <h3>Why it makes sense from a Pharm.D background</h3>
-          <p>I don't see computational biology as moving away from pharmacy.</p>
-          <p>I see it as building another layer on top of what I already study.</p>
-          <p>My Pharm.D education gives me a foundation in the biological and therapeutic side of medicine.</p>
-          <p>Research introduced me to questions at the molecular level.</p>
-          <p>Learning programming and computational methods gives me another set of tools for exploring those questions.</p>
-          <p>The intersection is what excites me.</p>
-          <p>For example, drug discovery can involve understanding a disease target, studying molecular structures, predicting interactions, evaluating candidate molecules, and eventually connecting those findings to therapeutic possibilities.</p>
-          <p>That requires knowledge from multiple fields.</p>
-          <p>I want to become comfortable working across those boundaries.</p>
+          <h3>Repositioning Computation as a Supportive Tool</h3>
+          <p>I realized that while computational biology is an invaluable modern methodology, it is <strong>not my ultimate research destination</strong>. My central passion is not algorithm development, nor is it sitting permanently behind a screen predicting hypothetical interactions.</p>
+          <p>My genuine curiosity lies in the living cell—the molecular oncology and experimental cell biology that explain how malignant phenotypes arise, persist, and spread.</p>
+          <p>Computational biology and bioinformatics will always remain vital components of my scientific toolkit. Modern cancer research is inherently multi-omic, and having the ability to parse RNA-seq data, inspect structural models, and write analytical scripts will make me a far more effective biologist. But computation must serve the biology, not replace it.</p>
 
-          <h3>Where I want to go</h3>
-          <p>My current interests are increasingly centred around <strong>structural and computational biology</strong>, with related interests in bioinformatics, AI/ML, molecular modelling, and computational approaches to drug discovery.</p>
-          <p>I am still at the beginning of this journey.</p>
-          <p>There are algorithms I still need to understand, biological concepts I still need to strengthen, and computational methods I still need to learn properly.</p>
-          <p>I don't see that as a weakness.</p>
-          <p>For me, being interested in research means being willing to enter areas where I don't yet know enough—and then systematically learn what is required.</p>
-          <p>My long-term goal is to pursue advanced research that brings together biological understanding, computation, and quantitative approaches to complex biological systems.</p>
-          <p>I started with pharmacy because I wanted to understand medicines and their impact on disease.</p>
-          <p>Research made me want to understand the biological questions underneath them.</p>
-          <p>Computational biology gives me another language through which I can explore those questions.</p>
-          <p><strong>I don't see computation as leaving pharmacy behind. I see it as expanding the questions I can ask.</strong></p>
+          <h3>My Chosen Path</h3>
+          <p>Computation gave me a way to explore science when I had limited lab access. But biology is what actually keeps me up at night. I don't want to just model cancer on a screen; I want to understand its living biology and investigate it through rigorous experimental research.</p>
         </div>
       `
     },
     'article-3': {
       category: 'ACADEMIC JOURNEY',
-      title: 'From a Pharm.D Classroom to a Research Laboratory',
-      tag: 'Academic Journey · Biophysics Transition',
+      title: 'From a Pharm.D Classroom to a Research Laboratory: Finding My Scientific Direction',
+      tag: 'Academic Journey · Classroom to Lab',
       imgSrc: './assets/article3_classroom_to_lab.jpg',
       content: `
         <div class="article-body-text">
-          <p>A classroom and a research laboratory can teach you about the same scientific subject in completely different ways.</p>
-          <p>In the classroom, you are often given a question and expected to arrive at the correct answer.</p>
-          <p>In research, you may begin with a question precisely because <strong>the answer is not known yet</strong>.</p>
-          <p>Experiencing that difference changed the way I think about science.</p>
+          <p>The transition from a professional healthcare degree like the Doctor of Pharmacy (Pharm.D) to fundamental scientific research is often seen as unusual. Yet, for me, it has been the most natural and necessary evolution of my academic life.</p>
+          <p>Pharmacy education is rigorous and comprehensive. Over my first three years at QIS College of Pharmacy, I have engaged deeply with human anatomy, physiology, medicinal chemistry, clinical pharmacology, pharmacokinetics, and pharmacotherapeutics. This curriculum provides an extraordinary foundation: it teaches you how drugs interact with physiological systems, how disease alters bodily function, and how therapeutic interventions impact patient outcomes.</p>
 
-          <h3>What pharmacy taught me</h3>
-          <p>As a Pharm.D student, my education is closely connected to medicines and their use.</p>
-          <p>I learn about pharmacology, pharmaceutics, medicinal chemistry, pathology, therapeutics, and the clinical aspects of patient care.</p>
-          <p>These subjects provide a way of understanding what happens when a drug enters the body, how it produces its effects, what can go wrong, and how therapy can ultimately benefit a patient.</p>
-          <p>But research introduced another perspective.</p>
-          <p>Instead of starting with an established mechanism from a textbook, I started encountering scientific questions where the evidence was still developing.</p>
+          <h3>The Limitations of Textbook Certainty</h3>
+          <p>However, the nature of classroom education is centered around existing consensus. Textbooks present disease as an established set of diagnostic criteria and treatment algorithms. You learn: <em>for stage IV cancer, administer regimen X; if recurrence occurs, switch to regimen Y</em>.</p>
+          <p>In the classroom, you are trained to identify the right answer from existing knowledge.</p>
+          <p>Yet as I studied advanced pharmacology, I found myself troubled by the questions the textbooks could not answer:</p>
+          <ul>
+            <li>Why does an oncology patient initially respond dramatically to targeted kinase inhibitors, only to experience aggressive disease recurrence months later?</li>
+            <li>What molecular alterations enable a primary tumour cell to survive in circulation and successfully establish a metastatic colony in bone or brain parenchyma?</li>
+            <li>Why do identical histological tumours harbour vastly different responses to immune checkpoint blockade?</li>
+          </ul>
+          <p>These questions cannot be answered by clinical dosage calculators or therapeutic guidelines. They demand <strong>fundamental mechanistic investigation at the laboratory bench</strong>.</p>
 
-          <h3>Entering research</h3>
-          <p>My first significant research exposure involved work around <strong>miRNA-incorporated nanocarrier delivery for Triple-Negative Breast Cancer</strong>.</p>
-          <p>The topic itself crossed several disciplines.</p>
-          <p>Cancer biology was connected to molecular regulation. Molecular regulation was connected to miRNA. Therapeutic possibilities were connected to drug delivery. And drug delivery brought in nanotechnology.</p>
-          <p>Suddenly, the boundaries between individual subjects became much less obvious.</p>
-          <p>That was one of the first things I found exciting about research.</p>
-          <p>A real scientific problem doesn't necessarily care which subject is printed on the cover of your textbook.</p>
+          <h3>Experiencing the Research Environment Firsthand</h3>
+          <p>My desire to understand science at its source motivated me to seek exposure to premier academic research laboratories. During my internship at the Department of Chemistry at NIT Warangal under Prof. P.V. Srilakshmi, I experienced the daily rigor of a dedicated research facility:</p>
+          <p>I observed the discipline of organic synthesis, gained hands-on familiarity with laboratory protocols, and experienced the environment of central instrumentation facilities—including X-ray diffraction (XRD), scanning electron microscopy (SEM), and spectroscopic instrumentation. Similarly, my interactions with doctoral researchers at IIT (BHU) gave me insight into how hypotheses are formulated, tested, challenged, and refined.</p>
+          <p>In those environments, I realized what research truly is: it is the systematic process of working at the frontier of what is known, where confidence does not come from knowing the answer, but from having the methodological rigor to test a hypothesis honestly.</p>
 
-          <h3>Learning to deal with uncertainty</h3>
-          <p>Research also changed my understanding of what it means to "know" something.</p>
-          <p>In academic coursework, confidence often comes from knowing the correct answer.</p>
-          <p>In research, confidence can sometimes come from knowing <strong>what you don't know</strong>.</p>
-          <p>You read a paper and discover a limitation.</p>
-          <p>You find another study with a different result.</p>
-          <p>You encounter a promising approach that still has practical barriers.</p>
-          <p>And instead of stopping there, you ask another question.</p>
-          <p>That process taught me that uncertainty is not necessarily a sign that something has gone wrong.</p>
-          <p>Sometimes, uncertainty is where the research begins.</p>
-
-          <h3>Building beyond my degree</h3>
-          <p>My research exposure gradually expanded my interests.</p>
-          <p>I became increasingly interested in <strong>computational biology, bioinformatics, structural biology, AI/ML, and computational approaches to biomedical research</strong>.</p>
-          <p>This direction may look unconventional from a traditional Pharm.D pathway, but to me it feels like a natural extension.</p>
-          <p>Pharmacy gave me a foundation in medicines and therapeutics.</p>
-          <p>Biomedical research introduced me to molecular-level questions.</p>
-          <p>Computational biology offers tools for investigating increasingly complex biological systems.</p>
-          <p>I want to build across these areas rather than remain limited to a single discipline.</p>
-          <p><strong>The journey from a Pharm.D classroom to a research laboratory has not been a change of direction for me. It has been an expansion of it.</strong></p>
+          <h3>Bridging Clinical Relevance with Molecular Investigation</h3>
+          <p>Rather than leaving pharmacy behind, I carry its greatest strength with me: an acute awareness of clinical reality and disease impact. When I examine a cancer cell line or an oncogenic signaling pathway, I never view it as an abstract biological puzzle. I see it as the biological reality of a malignant disease that directly claims human lives.</p>
+          <p>This realization defined my scientific direction: bridging clinical perspective with experimental cancer biology to uncover the molecular drivers that can eventually inform better therapeutic approaches.</p>
         </div>
       `
     },
     'article-4': {
-      category: 'FUTURE DIRECTION',
-      title: "Why I'm Moving Toward Biophysics and Computational Biology",
-      tag: 'Biophysics & Computational Biology',
+      category: 'RESEARCH DIRECTION',
+      title: 'Why I Am Moving Towards Experimental Cancer Biology',
+      tag: 'Experimental Cancer Biology · Ground Truth',
       imgSrc: './assets/article4_biophysics.png',
       content: `
         <div class="article-body-text">
-          <p>As my exposure to biomedical research has grown, I have started to recognize that the questions I am most curious about increasingly lie at the boundary between <strong>biology, physics, chemistry, and computation</strong>.</p>
-          <p>That is why I am planning to move toward <strong>biophysics and computational biology</strong>.</p>
-          <p>This is not because I see pharmacy as a field I need to leave behind.</p>
-          <p>My Pharm.D background has given me something I consider extremely valuable: a foundation in drugs, disease, pharmacology, therapeutics, and the clinical consequences of biological processes.</p>
-          <p>But I have also realized that I want to understand biological systems at a deeper level than the traditional pharmaceutical perspective alone allows me to.</p>
-          <p>I want to understand not only <strong>what a drug does</strong>, but what happens at the molecular and physical level that makes those effects possible.</p>
+          <p>Every emerging researcher must eventually confront an essential question: <em>where do you intend to make your contribution?</em></p>
+          <p>After navigating pharmacy education, exploring computational tools, and absorbing research literature, my answer is clear, deliberate, and unambiguous: <strong>I am committing myself to experimental cancer biology and molecular oncology</strong>.</p>
+          <p>Cancer is not an abstract concept or a static computational network. It is a living, evolving, heterogeneous, and extraordinarily dynamic biological phenomenon. While computational analyses and clinical observations provide essential frameworks, the <strong>ground truth of cancer biology is revealed at the laboratory bench</strong>.</p>
+
+          <h3>The Indispensable Value of Experimental Investigation</h3>
+          <p>To truly understand cancer progression and metastasis, experimental investigation is irreplaceable:</p>
           <ul>
-            <li>How does a molecule interact with a protein?</li>
-            <li>Why does a particular molecular structure produce a particular biological effect?</li>
-            <li>How do proteins change their conformations?</li>
-            <li>How do molecular interactions translate into cellular behaviour?</li>
-            <li>Can we use computational models to predict or understand these interactions?</li>
+            <li><strong>Cell Culture & In Vitro Models:</strong> Investigating cellular phenotypic shifts, migration assays, invasion chambers, and 3D spheroid cultures to directly visualize how cancer cells breach basement membranes.</li>
+            <li><strong>Molecular & Biochemical Assays:</strong> Western blotting, quantitative real-time PCR, immunoprecipitation, and enzyme assays to track signaling pathway activation and protein-protein interactions.</li>
+            <li><strong>Functional Genomics:</strong> Utilizing siRNA knockdown, shRNA screens, and CRISPR-based perturbation to test whether candidate genes are functionally necessary or sufficient to drive malignancy.</li>
+            <li><strong>Mechanistic Validation:</strong> Directly proving causation rather than merely observing computational correlation.</li>
           </ul>
-          <p>These questions are what draw me toward biophysics and computational biology.</p>
+          <p>These techniques form the core of molecular oncology. Experiencing the physical reality of biology—the precision of cell maintenance, the meticulousness of assay design, and the discipline of experimental control—is the training I actively seek.</p>
 
-          <h3>Why biophysics?</h3>
-          <p>Biophysics particularly interests me because it provides a quantitative way of looking at biological systems.</p>
-          <p>Biology is often taught through mechanisms and pathways, but those systems are ultimately governed by physical principles—molecular interactions, energy, forces, dynamics, diffusion, conformational changes, and thermodynamics.</p>
-          <p>I find that perspective fascinating.</p>
-          <p>It creates a bridge between the biological systems I already study through pharmacy and the physical principles that govern them.</p>
+          <h3>Academic Honesty: Where I Stand Today</h3>
+          <p>It is vital to state clearly what I am and what I am not. I am not an established cancer investigator, nor do I claim to have already mastered advanced wet-lab experimental methodologies. I am currently a third-year undergraduate Pharm.D student building my academic foundation.</p>
+          <p>What I possess is a deep, mature, and focused commitment to this discipline. I am actively preparing for national competitive examinations including GATE (Life Sciences & Biotechnology) to qualify for premier postgraduate and doctoral research programs. I have spent my undergraduate years studying oncology literature, understanding molecular pathways, earning peer review credentials through Elsevier, and contributing scholarly service as an invited reviewer for JMIR.</p>
 
-          <h3>Why computational biology?</h3>
-          <p>At the same time, modern biology generates enormous amounts of data and increasingly detailed structural information.</p>
-          <p>Computational methods can help us analyse that information, model biological systems, investigate molecular structures, identify patterns, and explore questions that would be difficult to approach experimentally alone.</p>
-          <p>This is where my interest in programming, machine learning, bioinformatics, structural biology, and computational drug discovery comes together.</p>
-          <p>I don't want computation to become something separate from my understanding of biology.</p>
-          <p>I want it to become a <strong>tool for asking better biological questions</strong>.</p>
-
-          <h3>Why make this transition now?</h3>
-          <p>I am still early in my academic journey, which is precisely why I want to explore this direction now.</p>
-          <p>Rather than waiting until the end of my Pharm.D to decide what comes next, I want to use my undergraduate years to gradually build the foundations I will need for advanced research.</p>
-          <p>That means strengthening my understanding of biology and chemistry while simultaneously learning mathematics, programming, computational methods, and the physical principles behind biological systems.</p>
-          <p>The transition therefore isn't:</p>
-          <p><strong>Pharmacy → abandoning pharmacy → something completely different.</strong></p>
-          <p>For me, it is:</p>
-          <p><strong>Pharmacy → biomedical research → molecular questions → biophysics + computational biology.</strong></p>
-          <p>I see my Pharm.D background as the starting point of this path, not a limitation on where it can lead.</p>
-          <p>Ultimately, I want to work on biological problems that require multiple ways of thinking—where understanding a disease may require biology, understanding a molecule may require chemistry and physics, and understanding the resulting complexity may require computation.</p>
-          <p>That interdisciplinary space is where I increasingly see myself as a researcher.</p>
-
-          <h3>Still at the beginning</h3>
-          <p>I am also conscious that I am still a student.</p>
-          <p>I am not approaching these fields as someone who has already mastered them.</p>
-          <p>I am learning programming. I am strengthening my scientific foundations. I am exploring computational methods. I am looking for more opportunities to experience research directly.</p>
-          <p>That is part of what makes this stage exciting.</p>
-          <p>There is still a tremendous amount to learn.</p>
-          <p>My goal after Pharm.D is not simply to stop at the degree. I want to continue into advanced research, eventually working toward deeper questions in structural and computational biology and other interdisciplinary areas of biological science.</p>
-          <p>Looking back, my first research experience did not give me a completely defined career path.</p>
-          <p>Instead, it gave me direction.</p>
-          <p><strong>I see my Pharm.D background as the starting point of this path — not a limitation on where it can lead.</strong></p>
+          <h3>My Long-Term Vision</h3>
+          <p>My aspiration is to enter a rigorous research laboratory dedicated to experimental cancer biology for advanced postgraduate and doctoral training. I want to contribute directly to uncovering the molecular mechanisms governing cancer progression, tumour-stroma interactions, and metastatic dissemination.</p>
+          <p>I know the path will be demanding, requiring years of disciplined training at the bench, dealing with negative results, refining protocols, and pushing against the unknown. That challenge is precisely why I have chosen it.</p>
+          <p>I look forward to building my scientific foundation, learning from experienced investigators, and dedicating my career to understanding cancer through molecular and cellular biology.</p>
         </div>
       `
     }
